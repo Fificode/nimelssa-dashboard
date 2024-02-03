@@ -1,7 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./public/index.html",
-  "./src/**/*.{js,ts,jsx,tsx}",],
+  content: [
+    "./**/*.html",
+          "./*.html",
+          "./**/*.js",
+          "./*.js",
+          "./**/*.vue",
+          "./*.vue",
+  ],
   theme: {
     fontFamily: {
       sans: ['Inter var', 'sans-serif'],
@@ -26,7 +32,8 @@ export default {
       'light-grey': '#717171',
       'light-purple-bg': '#cd9cf2',
       'white-bg' : '#f6f3ff ',
-      'carousel-bg': '#bbbbbb'
+      'carousel-bg': '#bbbbbb',
+      'text-black': '#303030'
      
     },
     extend: {},

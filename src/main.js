@@ -3,8 +3,8 @@ import { createWebHistory, createRouter } from "vue-router"
 import App from './App.vue'
 import './index.css'
 import DashboardLayout from '@/layouts/DashboardLayout.vue'
-import Dashboard from '@/views/Dashboard.vue'
-import Settings from '@/views/Settings.vue'
+import Overview from '@/views/OverviewPage.vue'
+import Settings from '@/views/SettingsPage.vue'
 import Tables from '@/views/Tables.vue'
 
 
@@ -16,7 +16,7 @@ const routes = [
       children: [
         {
           path: "/dashboard",
-          component: Dashboard,
+          component: Overview,
         },
         {
           path: "/dashboard/settings",

@@ -1,19 +1,15 @@
 <template>
     <!-- Navbar -->
-    <!-- <nav
-      class="absolute top-0 left-0 w-full z-10 bg-transparent md:flex-row md:flex-nowrap md:justify-start flex items-center p-4"
-    > -->
-    <nav class="absolute top-0 left-0 w-full z-10 bg-white md:flex-row md:flex-nowrap md:justify-start flex items-center p-[11px]  shadow-sm">
+    <nav class="w-full z-10 bg-white md:flex-row md:flex-nowrap md:justify-start flex items-center p-[11px] shadow-sm">
       <div
-        class="w-full mx-autp items-center flex justify-between md:flex-nowrap flex-wrap md:px-10 px-4"
+        class="w-full mx-auto items-center flex justify-between md:flex-nowrap flex-wrap md:px-10 px-4"
       >
         <!-- Brand -->
-        <a
+        <p
           class="text-gray-dark text-[19px] font-roboto  hidden lg:inline-block font-[500]"
-          href="javascript:void(0)"
         >
           Overview
-        </a>
+        </p>
         <!-- Form -->
         <form
           class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3"
@@ -27,7 +23,7 @@
             <input
               type="text"
               placeholder="Search here..."
-              class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-white rounded text-sm shadow outline-none focus:outline-none focus:ring w-full pl-10"
+              class="border-[2px] rounded-[5px] border-gray-light px-3 py-3 placeholder-gray-dark text-gray relative bg-white text-sm outline-none focus:border-[2px] focus:outline-none focus:border-light-purple-bg w-full pl-10"
             />
           </div>
         </form>

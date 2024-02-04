@@ -1,53 +1,57 @@
 <template>
     <div>
       <a
-        class="text-blueGray-500 block"
+        class="text-gray-dark block"
         href="#pablo"
         ref="btnDropdownRef"
         v-on:click="toggleDropdown($event)"
       >
         <div class="items-center flex">
           <span
-            class="w-12 h-12 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full"
+            class="w-12 h-12 text-sm text-gray-dark bg-gray inline-flex items-center justify-center rounded-full  mr-[5px]"
           >
-            <!-- <img
-              alt="..."
+            <img
+              alt="user representation"
               class="w-full rounded-full align-middle border-none shadow-lg"
               :src="image"
-            /> -->
+            />
+           
           </span>
+          <p class="font-roboto text-[14px] text-gray-dark pl-[6px] hidden md:block">Stephanie Fabian</p>
         </div>
       </a>
       <div
         ref="popoverDropdownRef"
-        class="bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg min-w-48"
+        class="bg-white text-base z-50 py-2 list-none text-left rounded shadow-lg min-w-48 "
         v-bind:class="{
           hidden: !dropdownPopoverShow,
           block: dropdownPopoverShow,
         }"
       >
+      <p class="font-roboto text-[16px] text-gray-dark  py-2 px-4 block w-full whitespace-nowrap bg-transparent text-center font-[600] md:hidden">Stephanie Fabian</p>
+      <div class="h-0 my-2 border border-solid border-gray md:hidden"></div>
         <a
           href="javascript:void(0);"
-          class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+          class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-dark font-roboto"
         >
           Action
         </a>
         <a
           href="javascript:void(0);"
-          class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+          class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-dark font-roboto"
         >
           Another action
         </a>
         <a
           href="javascript:void(0);"
-          class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+          class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-dark font-roboto"
         >
           Something else here
         </a>
-        <div class="h-0 my-2 border border-solid border-blueGray-100" />
+        <div class="h-0 my-2 border border-solid border-gray"></div>
         <a
           href="javascript:void(0);"
-          class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+          class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-dark font-roboto"
         >
           Seprated link
         </a>
@@ -58,13 +62,13 @@
   <script>
   import { createPopper } from "@popperjs/core";
   
-  // import image from "@/assets/img/team-1-800x800.jpg";
+  import image from "/img/team-2-800x800.jpg";
   
   export default {
     data() {
       return {
         dropdownPopoverShow: false,
-        // image: image,
+        image: image,
       };
     },
     methods: {

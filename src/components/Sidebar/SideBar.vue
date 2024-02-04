@@ -15,7 +15,7 @@
   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
 </svg>
 
-          <!-- <i class="fas fa-bars"></i> -->
+          
         </button>
         <!-- NIMELSSA Home -->
         <router-link
@@ -45,26 +45,26 @@
         </ul>
         <!-- Collapse -->
         <div
-          class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded px-6"
+          class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded px-6 bg-[#fff] animate-scale_up_tl "
           v-bind:class="collapseShow"
         >
           <!-- Collapse header -->
           <div
-            class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-blueGray-200"
+            class="md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-gray-dark "
           >
             <div class="flex flex-wrap">
               <div class="w-6/12">
                 <router-link
-                  class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0"
+                  class="md:block text-left md:pb-2 mr-0 inline-block whitespace-nowrap  p-4 px-0"
                   to="/"
                 >
-                <div class="flex flex-row justify-center items-center">
+                <div class="flex flex-row justify-center items-center ml-[7px]">
         <img
                 alt="Home of NIMELSSA"
                 :src="nimelssalogo"
-                class="w-[30px] h-[30px] md:w-16 md:h-16"
+                class="w-[50px] h-[50px] "
               />
-          <p class="text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0">NIMELSSA DASHBOARD </p>
+          <p class="text-gray-dark mr-0 inline-block whitespace-nowrap text-[15px] font-roboto font-[600] p-4 px-0">NIMELSSA DASHBOARD </p>
         </div>
                 </router-link>
               </div>
@@ -89,7 +89,7 @@
               <input
                 type="text"
                 placeholder="Search"
-                class="border-0 px-3 py-2 h-12 border-solid border-blueGray-500 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-base leading-snug shadow-none outline-none focus:outline-none w-full font-normal"
+                class="border-[1px] rounded-[5px] border-gray-dark px-3 py-3 placeholder-gray-dark text-gray-dark relative bg-white text-sm outline-none focus:border-[2px] focus:outline-none focus:border-light-purple-bg w-full pl-[5px]"
               />
             </div>
           </form>

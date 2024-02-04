@@ -20,6 +20,7 @@ export default {
       xl: '1440px',
     },
     colors: {
+      'white': '#fffffd',
       'blue': '#1fb6ff',
       'purple': '#7e5bef',
       'pink': '#ff49db',
@@ -46,11 +47,12 @@ export default {
 '100%': {transform: 'scale(1)',
 'transform-origin': '0% 0%'},
       },
-      animation: {
+     
+      },
+       animation: {
         
         scale_up_tl: 'scale_up_tl 0.45s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
       },
-      }
     },
   },
   plugins: [],

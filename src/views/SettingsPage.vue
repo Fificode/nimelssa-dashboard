@@ -1,21 +1,18 @@
 <template>
-    <div class="flex flex-wrap pt-24">
-      <div class="w-full lg:w-8/12 px-4">
-        <CardSettings />
+    <div class="pb-28 pt-[40px] md:pt-12 md:mt-[0px] -mt-[20px] min-h-[100vh]">
+      <div class="w-full px-4">
+        <card-settings />
       </div>
-      <div class="w-full lg:w-4/12 px-4">
-        <CardReminder />
-      </div>
+     
     </div>
   </template>
   <script>
-  import CardSettings from "@/components/Cards/CardSettings.vue";
-  import CardReminder from "@/components/Cards/CardReminder.vue";
+  import CardSettings from "@/components/Settings/CardSettings.vue";
   
   export default {
     components: {
       CardSettings,
-      CardReminder,
+    
     },
   };
   </script>

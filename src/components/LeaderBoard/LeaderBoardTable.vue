@@ -10,7 +10,7 @@
               class="font-semibold text-lg font-roboto"
               :class="[color === 'light' ? 'text-gray-dark' : 'text-white']"
             >
-              Quiz Results
+              Leader Board
             </h3>
           </div>
         </div>
@@ -39,7 +39,27 @@
                   : 'bg-purple text-white border-purple',
               ]"
               >
-                DATE
+                NAME
+              </th>
+              <th
+                class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left font-roboto"
+                :class="[
+                color === 'light'
+                  ? 'bg-white-bg text-light-grey border-white-bg'
+                  : 'bg-purple text-white border-purple',
+              ]"
+              >
+              
+              </th>
+              <th
+                class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left font-roboto"
+                :class="[
+                color === 'light'
+                  ? 'bg-white-bg text-light-grey border-white-bg'
+                  : 'bg-purple text-white border-purple',
+              ]"
+              >
+                LEVEL
               </th>
               <th
                 class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left font-roboto"
@@ -60,26 +80,6 @@
               ]"
               >
                 SCORE
-              </th>
-              <th
-                class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left font-roboto"
-                :class="[
-                color === 'light'
-                  ? 'bg-white-bg text-light-grey border-white-bg'
-                  : 'bg-purple text-white border-purple',
-              ]"
-              >
-              
-              </th>
-              <th
-                class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left font-roboto"
-                :class="[
-                color === 'light'
-                  ? 'bg-white-bg text-light-grey border-white-bg'
-                  : 'bg-purple text-white border-purple',
-              ]"
-              >
-                VIEW TEST 
               </th>
              
               <th
@@ -110,7 +110,7 @@
               <td
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
               >
-                12/04/2023
+                Ayinde Oluwafunke
               </td>
               <td
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
@@ -120,7 +120,7 @@
               <td
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
               >
-               50%
+               500
               </td>
               <td
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
@@ -128,9 +128,9 @@
                 
               </td>
               <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto font-[600]"
+                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
               >
-              <a href="#" class="text-purple"> view</a> 
+             95%
               </td>
             
             </tr>
@@ -152,7 +152,7 @@
               <td
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
               >
-                14/05/2023
+                Fabian Marvel
               </td>
               <td
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
@@ -162,7 +162,7 @@
               <td
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
               >
-               60%
+               500
               </td>
               <td
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
@@ -170,9 +170,9 @@
                 
               </td>
               <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto font-[600]"
+                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
               >
-              <a href="#" class="text-purple"> view</a> 
+              92%
               </td>
             
             </tr>
@@ -193,7 +193,7 @@
               <td
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
               >
-                18/06/2023
+               Akiga Stephanie
               </td>
               <td
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
@@ -203,7 +203,7 @@
               <td
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
               >
-               70%
+               500
               </td>
               <td
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
@@ -211,9 +211,9 @@
                 
               </td>
               <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto font-[600]"
+                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
               >
-              <a href="#" class="text-purple"> view</a> 
+          90% 
               </td>
             
             </tr>
@@ -234,7 +234,7 @@
               <td
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
               >
-                22/07/2023
+                Adeyemi Bola
               </td>
               <td
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
@@ -244,7 +244,7 @@
               <td
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
               >
-               70%
+               400
               </td>
               <td
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
@@ -252,9 +252,9 @@
                 
               </td>
               <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto font-[600]"
+                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
               >
-              <a href="#" class="text-purple"> view</a> 
+          85%
               </td>
             
             </tr>
@@ -275,7 +275,7 @@
               <td
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
               >
-                18/08/2023
+                Kingsley Paul
               </td>
               <td
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
@@ -285,7 +285,7 @@
               <td
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
               >
-               80%
+               300
               </td>
               <td
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
@@ -293,9 +293,9 @@
                 
               </td>
               <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto font-[600]"
+                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
               >
-               <a href="#" class="text-purple "> view</a> 
+               82%
               </td>
             
             </tr>
@@ -303,7 +303,7 @@
           
           </tbody>
         </table>
-        <div class="p-[20px]"><a href='#' class="text-purple font-roboto font-[600] text-[14px]">See more results</a></div> 
+       <div class="p-[20px]"><a href='#' class="text-purple font-roboto font-[600] text-[14px]">See more participants</a></div> 
       </div>
     </div>
   </template>

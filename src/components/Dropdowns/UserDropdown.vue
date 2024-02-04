@@ -17,7 +17,7 @@
             />
            
           </span>
-          <p class="font-roboto text-[14px] text-gray-dark pl-[6px] hidden md:block">Stephanie Fabian</p>
+          <p class="font-roboto font-[600] text-[14px] text-gray-dark pl-[6px] hidden md:block">Stephanie Fabian</p>
         </div>
       </a>
       <div

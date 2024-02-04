@@ -5,6 +5,7 @@ import './index.css'
 import DashboardLayout from '@/layouts/DashboardLayout.vue'
 import Overview from '@/views/OverviewPage.vue'
 import Result from '@/views/ResultPage.vue'
+import LeaderBoard from '@/views/LeaderBoardPage.vue'
 import Settings from '@/views/SettingsPage.vue'
 import Tables from '@/views/TablesPage.vue'
 
@@ -22,6 +23,10 @@ const routes = [
         {
           path: "/dashboard/result",
           component: Result,
+        },
+        {
+          path: "/dashboard/leaderboard",
+          component: LeaderBoard,
         },
         {
           path: "/dashboard/settings",

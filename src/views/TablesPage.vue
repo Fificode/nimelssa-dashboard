@@ -9,7 +9,7 @@
     </div>
   </template>
   <script>
-  import CardTable from "@/components/Cards/CardTable.vue";
+  import CardTable from "@/components/Results/ResultTable.vue";
   
   export default {
     components: {

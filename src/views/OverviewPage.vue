@@ -4,8 +4,8 @@
       <div class="px-4 md:px-10 mx-auto w-full pt-[40px] md:pt-[10px]">
         <div class="w-full h-[170px] md:h-[160px] bg-light-purple-bg rounded-[10px] flex justify-between ">
   <div class= "flex flex-col justify-center px-[30px] ">
-  <p class="text-text-black text-[22px] py-[5px]">Welcome, Stephanie</p>
-  <p class="text-text-black text-[14px]  py-[5px]">Ready to start your day with some quiz?</p>
+  <p class="text-text-black text-[22px] font-[600] py-[5px]">Welcome, Stephanie</p>
+  <p class="text-text-black text-[14px] font-[500] py-[5px]">Ready to start your day with some quiz?</p>
    </div>        
   <img :src="welcome" alt="Overview background showing a desk with laptop, books and writing materials" class="lg:block lg:w-[400px] lg:h-[180px] hidden" /> 
   </div>

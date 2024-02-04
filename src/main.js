@@ -4,8 +4,9 @@ import App from './App.vue'
 import './index.css'
 import DashboardLayout from '@/layouts/DashboardLayout.vue'
 import Overview from '@/views/OverviewPage.vue'
+import Result from '@/views/ResultPage.vue'
 import Settings from '@/views/SettingsPage.vue'
-import Tables from '@/views/Tables.vue'
+import Tables from '@/views/TablesPage.vue'
 
 
 const routes = [
@@ -17,6 +18,10 @@ const routes = [
         {
           path: "/dashboard",
           component: Overview,
+        },
+        {
+          path: "/dashboard/result",
+          component: Result,
         },
         {
           path: "/dashboard/settings",

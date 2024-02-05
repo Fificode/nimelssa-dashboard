@@ -1,12 +1,12 @@
 <template>
-    <div>
+    <div >
       <a
         class="text-gray-dark block"
         href="#pablo"
         ref="btnDropdownRef"
         v-on:click="toggleDropdown($event)"
       >
-        <div class="items-center flex">
+        <div class="items-center flex  md:pr-[50px] lg:pr-[5px]">
           <span
             class="w-12 h-12 text-sm text-gray-dark bg-gray inline-flex items-center justify-center rounded-full  mr-[5px]"
           >
@@ -17,7 +17,8 @@
             />
            
           </span>
-          <p class="font-roboto font-[600] text-[14px] text-gray-dark pl-[6px] hidden md:block">Stephanie Fabian</p>
+          <p class="font-roboto font-[600] text-[14px] text-gray-dark pl-[6px] hidden lg:block md:pr-[20px]">Stephanie Fabian
+          </p>
         </div>
       </a>
       <div

@@ -1,5 +1,5 @@
 <template>
-    <div class="pb-28 pt-[40px] md:pt-12 md:mt-[0px] -mt-[20px] h-[100vh]">
+    <div class="pb-28 pt-[40px] md:pt-12 mt-[70px]  min-h-[100vh]">
     <leader-board-table />
     </div>
     </template>

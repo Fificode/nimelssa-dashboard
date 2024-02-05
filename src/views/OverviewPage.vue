@@ -1,6 +1,6 @@
 <template>
     <!-- Header -->
-    <div class="relative pb-28 md:pt-12 md:mt-[0px] -mt-[20px] ">
+    <div class="relative pb-28 md:pt-12 mt-[70px] min-h-[100vh] ">
       <div class="px-4 md:px-10 mx-auto w-full pt-[40px] md:pt-[10px]">
         <div class="w-full h-[170px] md:h-[160px] bg-light-purple-bg rounded-[10px] flex justify-between ">
   <div class= "flex flex-col justify-center px-[30px] ">

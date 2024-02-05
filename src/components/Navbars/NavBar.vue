@@ -1,6 +1,6 @@
 <template>
     <!-- Navbar -->
-    <nav class="w-full z-10 bg-white md:flex-row md:flex-nowrap md:justify-start flex items-center p-[11px] shadow-sm">
+    <nav class="fixed hidden  md:top-0 md:left-[256px] w-[79.8%] z-10 bg-white md:flex-row md:flex-nowrap md:justify-start md:flex items-center p-[11px] shadow-sm">
       <div
         class="w-full mx-auto items-center flex justify-between md:flex-nowrap flex-wrap md:px-10 px-4"
       >

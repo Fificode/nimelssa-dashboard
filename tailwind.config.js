@@ -53,6 +53,7 @@ export default {
         
         scale_up_tl: 'scale_up_tl 0.45s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
       },
+      
     },
   },
   plugins: [],

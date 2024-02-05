@@ -89,7 +89,7 @@
               <input
                 type="text"
                 placeholder="Search"
-                class="border-[1px] rounded-[5px] border-gray-dark px-3 py-3 placeholder-gray-dark text-gray-dark relative bg-white text-sm outline-none focus:border-[2px] focus:outline-none focus:border-light-purple-bg w-full pl-[5px]"
+                class="border-[1px] rounded-[5px] border-gray-dark px-3 py-3 placeholder-gray-dark text-gray-dark relative bg-white text-sm outline-none focus:border-[2px] focus:outline-none focus:border-light-purple-bg w-full pl-[10px]"
               />
             </div>
           </form>

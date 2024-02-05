@@ -6,7 +6,7 @@
         ref="btnDropdownRef"
         v-on:click="toggleDropdown($event)"
       >
-        <div class="items-center flex  md:pr-[50px] lg:pr-[5px]">
+        <div class="items-center flex  md:pr-[85px] lg:pr-[10px]">
           <span
             class="w-12 h-12 text-sm text-gray-dark bg-gray inline-flex items-center justify-center rounded-full  mr-[5px]"
           >
@@ -17,7 +17,7 @@
             />
            
           </span>
-          <p class="font-roboto font-[600] text-[14px] text-gray-dark pl-[6px] hidden lg:block md:pr-[20px]">Stephanie Fabian
+          <p class="font-roboto font-[600] text-[14px] text-gray-dark pl-[6px] hidden lg:block lg:pr-[50px] xlg:pr-[5px]">Stephanie Fabian
           </p>
         </div>
       </a>

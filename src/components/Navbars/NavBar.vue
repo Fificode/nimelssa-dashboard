@@ -2,11 +2,11 @@
     <!-- Navbar -->
     <nav class="fixed hidden  md:top-0 md:left-[256px] w-[79.8%] z-10 bg-white md:flex-row md:flex-nowrap md:justify-start md:flex items-center p-[11px] shadow-sm">
       <div
-        class="w-full mx-auto items-center flex justify-between md:flex-nowrap flex-wrap md:px-10 px-4"
+        class="w-full mx-auto items-center flex justify-between md:flex-nowrap flex-wrap"
       >
         <!-- Brand -->
         <p
-          class="text-gray-dark text-[19px] font-roboto  hidden lg:inline-block font-[500]"
+          class="text-gray-dark text-[19px] font-roboto px-[15px]  hidden md:inline-block font-[500]"
         >
           Overview
         </p>

@@ -30,7 +30,7 @@ const routes = [
         
         {
           name: 'ExternalQuiz',
-          path: "/startquiz",
+          path: "dashboard/startquiz",
           component: ExternalQuiz,
         },
         

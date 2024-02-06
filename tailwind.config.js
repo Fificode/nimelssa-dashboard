@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: [
     "./**/*.html",
@@ -17,7 +18,6 @@ export default {
       sm: '480px',
       md: '768px',
       lg: '976px',
-      xlg: '1200px',
       xl: '1440px',
     },
     colors: {
@@ -57,6 +57,8 @@ export default {
       
     },
   },
-  plugins: [],
+  plugins: [
+   
+  ],
 }
 

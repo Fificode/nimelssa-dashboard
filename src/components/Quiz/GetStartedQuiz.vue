@@ -3,20 +3,29 @@
 <img :src="peopleQuestion" class="w-[350px] h-[300px]" alt="Illustration of a boy and girl standing and questioning" />
 <p class="py-[20px] text-[22px] font-[600] text-text-black font-roboto">Ready for some quiz?</p>
 <div class="py-[10px]">
-    <router-link :to="{name: ExternalQuiz}" >
-    <a  class="text-white font-roboto text-[14px] bg-purple border-none py-[12px] px-[30px] rounded-[5px] hover:bg-[#cd9cf2]">Get Started</a>
-    </router-link>
+    <router-link
+  to="quiz/startquiz"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="text-white font-roboto text-[14px] bg-purple border-none py-[12px] px-[30px] rounded-[5px] hover:bg-[#cd9cf2]"
+>
+  Get Started
+</router-link>
+
+   
 </div>
 </div>
 </template>
 <script>
 import peopleQuestion from '/img/peopleQuestion.png'
-import ExternalQuizPage from '@/views/ExternalQuizPage.vue';
+
+
+
 export default {
 data() {
     return {
         peopleQuestion,
-        ExternalQuizPage
+   
     }
 }
 }

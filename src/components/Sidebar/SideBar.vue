@@ -97,6 +97,7 @@
           <ul class="md:flex-col md:min-w-full flex flex-col list-none">
     <li v-for="link in links" :key="link.path" class="items-center " >
       <router-link :to="link.path" v-slot="{ href, navigate}">
+        <!-- @click="handleLinkClick(link.label, navigate)" -->
         <a
           :href="href"
           @click="navigate"
@@ -153,7 +154,13 @@
     iconStrokeColor() {
       // Return icon stroke color based on path if needed
       return '#273444';
-    }
+    },
+    handleLinkClick(pageName, navigate) {
+      this.$store.commit('setCurrentPage', pageName)
+      console.log(this.$store.state.currentPage);
+      navigate()
+    },
+   
     },
     components: {
       NotificationDropdown,

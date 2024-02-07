@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
+// import Vue from 'vue'
 import { createWebHistory, createRouter } from "vue-router"
 import App from './App.vue'
+import store from './store'
 import './index.css'
 import DashboardLayout from '@/layouts/DashboardLayout.vue'
 import Overview from '@/views/OverviewPage.vue'
@@ -9,8 +11,9 @@ import Result from '@/views/ResultPage.vue'
 import LeaderBoard from '@/views/LeaderBoardPage.vue'
 import Settings from '@/views/SettingsPage.vue'
 import Tables from '@/views/TablesPage.vue'
-import ExternalQuiz from '@/views/ExternalQuizPage.vue'
+import ExternalQuiz from '@/layouts/ExternalQuizPage.vue'
 
+// Vue.config.productionTip = false
 
 const routes = [
     {
@@ -27,13 +30,6 @@ const routes = [
           component: Quiz,
          
         },
-        
-        {
-          name: 'ExternalQuiz',
-          path: "dashboard/startquiz",
-          component: ExternalQuiz,
-        },
-        
         {
           path: "/dashboard/result",
           component: Result,
@@ -53,7 +49,12 @@ const routes = [
        
       ],
     },
-   
+    {
+     
+      name: 'ExternalQuiz',
+      path: "/dashboard/quiz/startquiz",
+      component: ExternalQuiz,
+    },
    
   ];
   
@@ -61,7 +62,11 @@ const routes = [
     history: createWebHistory(),
     routes,
   });
-  
-  createApp(App).use(router).mount("#app");
+ 
+  const app = createApp(App)
+app.use(store)
+app.use(router)
+app.mount('#app')
+  // createApp(App).use(router).mount("#app");
   
 

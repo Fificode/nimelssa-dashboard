@@ -42,6 +42,7 @@ export default {
     },
     extend: {
       keyframes: {
+        bounce: {'0%, 80%' : {transform: 'translateY(0)'}, '40%': {transform: 'translateY(-20px)'}, '60%': {transform: 'translateY(-15px)'}, '100%': {transform: 'translateY(-3px)'}},
         scale_up_tl:{
           '0%' : { transform: 'scale(0.5)',
         'transform-origin': '0% 0%'},
@@ -51,7 +52,7 @@ export default {
      
       },
        animation: {
-        
+        bounce: 'bounce 0.5s infinite',
         scale_up_tl: 'scale_up_tl 0.45s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
       },
       

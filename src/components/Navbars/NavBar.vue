@@ -8,7 +8,7 @@
         <p
           class="text-gray-dark text-[19px] font-roboto px-[15px]  hidden md:inline-block font-[500]"
         >
-          Overview
+       Overview
         </p>
         <!-- Form -->
         <form
@@ -41,11 +41,22 @@
   
   <script>
   import UserDropdown from "@/components/Dropdowns/UserDropdown.vue";
+  import { computed } from 'vue'
+  import { useStore } from 'vuex'
   
   export default {
+    setup() {
+    const store = useStore()
+    const currentPage = computed(() => store.state.currentPage)
+
+    return {
+      currentPage
+    }
+  },
     components: {
       UserDropdown,
     },
+   
   };
   </script>
   

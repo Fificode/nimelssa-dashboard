@@ -1,6 +1,6 @@
 <template>
     <nav
-      class="left-0 w-full md:block fixed top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-md bg-white flex flex-wrap items-center justify-between  md:w-64 z-10 py-3 "
+      class="left-0 w-full md:block fixed top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-md bg-white flex flex-wrap items-center justify-between  md:w-64 z-10 py-3"  aria-label="Main Navigation"
     >
       <div
         class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap flex flex-wrap items-center justify-between w-full mx-auto px-0"
@@ -10,8 +10,11 @@
           class="cursor-pointer md:hidden px-3 py-1  leading-none "
           type="button"
           v-on:click="toggleCollapseShow('bg-white m-2 py-3 px-6')"
+          aria-expanded="false"
+        aria-controls="navigationMenu"
+        aria-label="Menu Navigation Bar"
         >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#273444" class="w-[25px] h-[25px]">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#273444" class="w-[25px] h-[25px]" aria-label="Open Menu Icon">
   <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
 </svg>
 
@@ -37,9 +40,6 @@
         <!-- User -->
         <ul class="md:hidden items-center flex flex-wrap list-none">
           <li class="inline-block relative">
-            <notification-dropdown />
-          </li>
-          <li class="inline-block relative">
             <user-dropdown />
           </li>
         </ul>
@@ -47,6 +47,7 @@
         <div
           class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded px-6 bg-[#fff] animate-scale_up_tl "
           v-bind:class="collapseShow"
+          id="navigationMenu"
         >
           <!-- Collapse header -->
           <div
@@ -73,8 +74,9 @@
                   type="button"
                   class="cursor-pointer  md:hidden px-3 py-1  leading-none"
                   v-on:click="toggleCollapseShow('hidden')"
+                  aria-label="Close Menu"
                 >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#273444" class="w-[25px] h-[25px]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#273444" class="w-[25px] h-[25px]" aria-label="Close Menu Icon">
   <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
 </svg>
 
@@ -103,7 +105,7 @@
          :class="{ 'bg-light-purple-bg rounded-[10px] hover:opacity-[0.8]': isActiveLink(link.path) }"
           class="my-2 px-2 py-3 font-roboto flex items-center"
         >
-          <svg  :class="iconClasses(link.path)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" :stroke="iconStrokeColor(link.path)" class="w-[25px] h-[25px] mr-2">
+          <svg  :class="iconClasses(link.path)" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" :stroke="iconStrokeColor(link.path)" class="w-[25px] h-[25px] mr-2" aria-label='Icon label' >
            <path stroke-linecap="round" stroke-linejoin="round"  :d='link.icon'></path> <!-- SVG Path for each link -->
           </svg>
           <span class="text-gray-dark text-[15px] font-[500] ">{{ link.label }}</span>
@@ -115,10 +117,10 @@
       </div>
     </nav>
   </template>
-  ); }
+ 
   
   <script>
-  import NotificationDropdown from "@/components/Dropdowns/NotificationDropdown.vue";
+
   import UserDropdown from "@/components/Dropdowns/UserDropdown.vue";
   import nimelssalogo from "/img/nimelssaLogo.png";
   
@@ -162,7 +164,6 @@
    
     },
     components: {
-      NotificationDropdown,
       UserDropdown,
     },
     props: {

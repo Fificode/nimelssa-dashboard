@@ -5,6 +5,8 @@
         href="#pablo"
         ref="btnDropdownRef"
         v-on:click="toggleDropdown($event)"
+        aria-haspopup="true"
+      aria-expanded="false"
       >
         <div class="items-center flex">
           <span
@@ -28,24 +30,29 @@
           hidden: !dropdownPopoverShow,
           block: dropdownPopoverShow,
         }"
+          role="menu"
+      aria-hidden="true"
       >
       <p class="font-roboto text-[16px] text-gray-dark  py-2 px-4 block w-full whitespace-nowrap bg-transparent text-center font-[600] md:hidden">Stephanie Fabian</p>
       <div class="h-0 my-2 border border-solid border-gray md:hidden"></div>
         <a
           href="javascript:void(0);"
           class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-dark font-roboto"
+          role="menuitem"
         >
           Action
         </a>
         <a
           href="javascript:void(0);"
           class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-dark font-roboto"
+          role="menuitem"
         >
           Another action
         </a>
         <a
           href="javascript:void(0);"
           class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-dark font-roboto"
+          role="menuitem"
         >
           Something else here
         </a>
@@ -53,6 +60,7 @@
         <a
           href="javascript:void(0);"
           class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-dark font-roboto"
+          role="menuitem"
         >
           Seprated link
         </a>

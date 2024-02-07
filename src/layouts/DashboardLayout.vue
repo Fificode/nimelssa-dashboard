@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div role="main" aria-label="Dashboard Layout">
       <sidebar :headerText="headerText" :setActiveItem="setActiveItem" />
       <div class="relative md:ml-64">
         <navbar :headerText="headerText" />

@@ -1,7 +1,7 @@
 <template>
     <div
       class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded "
-      :class="[color === 'light' ? 'bg-white' : 'bg-purple text-white']"
+      :class="[color === 'light' ? 'bg-white' : 'bg-purple text-white']"  aria-label="Leader Board"
     >
       <div class="rounded-t mb-0 px-4 py-3 border-0">
         <div class="flex flex-wrap items-center">
@@ -17,7 +17,7 @@
       </div>
       <div class="block w-full overflow-x-auto">
         <!-- Projects table -->
-        <table class="items-center w-full bg-transparent border-collapse">
+        <table class="items-center w-full bg-transparent border-collapse" aria-label="Leader Board Table">
           <thead>
             <tr>
               <th
@@ -27,6 +27,7 @@
                   ? 'bg-white-bg text-light-grey border-white-bg'
                   : 'bg-purple text-white border-purple',
               ]"
+              aria-label="Serial Number"
               >
                 S/N
               </th>
@@ -38,6 +39,7 @@
                   ? 'bg-white-bg text-light-grey border-white-bg'
                   : 'bg-purple text-white border-purple',
               ]"
+               aria-label="Name"
               >
                 NAME
               </th>
@@ -58,6 +60,7 @@
                   ? 'bg-white-bg text-light-grey border-white-bg'
                   : 'bg-purple text-white border-purple',
               ]"
+               aria-label="Level"
               >
                 LEVEL
               </th>
@@ -78,6 +81,7 @@
                   ? 'bg-white-bg text-light-grey border-white-bg'
                   : 'bg-purple text-white border-purple',
               ]"
+               aria-label="Score"
               >
                 SCORE
               </th>

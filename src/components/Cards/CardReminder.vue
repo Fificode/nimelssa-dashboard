@@ -2,6 +2,8 @@
   <div class="flex justify-center items-center">
     <div
       class="relative flex flex-col min-w-0 break-words bg-[#fff] w-[300px] mb-6 shadow-lg rounded-lg mt-16 py-[40px]"
+      role="region"
+      aria-label="Upcoming Test Information"
     >
         <div class="text-center ">
           <h1

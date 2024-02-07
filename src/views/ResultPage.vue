@@ -1,6 +1,6 @@
 <template>
-<div class="pb-28 pt-[40px] md:pt-12 mt-[70px] min-h-[100vh]">
-<result-table />
+<div class="pb-28 pt-[40px] md:pt-12 mt-[70px] min-h-[100vh]" aria-label="Result page">
+<result-table aria-label="Result Table"/>
 </div>
 </template>
 

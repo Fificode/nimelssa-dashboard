@@ -1,6 +1,6 @@
 <template>
     <div
-      class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0"
+      class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0"  aria-label="Account Information"
     >
       <div class="rounded-t bg-white mb-0 px-6 py-6">
         <div class="text-left">
@@ -8,14 +8,14 @@
         </div>
       </div>
       <div class="flex-auto px-8 lg:px-10 py-10 pt-0">
-        <form>
+        <form aria-label="User Information">
           <div class="flex justify-between">
           <h6 class="text-gray-dark font-roboto text-sm mt-3 mb-6 font-bold uppercase">
             User Information
           </h6>
           <!-- Edit Button -->
-          <button class="bg-none border-none cursor-pointer flex justify-center items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[20px] h-[20px]">
+          <button class="bg-none border-none cursor-pointer flex justify-center items-center" aria-label="Edit User Information">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[20px] h-[20px]" aria-label="Edit icon">
   <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L6.832 19.82a4.5 4.5 0 0 1-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 0 1 1.13-1.897L16.863 4.487Zm0 0L19.5 7.125" />
 </svg>
 
@@ -34,6 +34,7 @@
                   type="text"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-dark bg-white rounded text-sm shadow focus:outline-light-purple-bg  w-full "
                   value="Stephanie" disabled
+                  aria-label="First Name"
                 />
               </div>
             </div>
@@ -49,6 +50,7 @@
                   type="text"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-dark bg-white rounded text-sm shadow focus:outline-light-purple-bg w-full "
                   value="Fabian" disabled
+                  aria-label="Surname"
                 />
               </div>
             </div>
@@ -64,6 +66,7 @@
                   type="email"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-dark bg-white rounded text-sm shadow focus:outline-light-purple-bg w-full"
                   value="stephaniefabian@gmail.com" disabled
+                  aria-label="Email Address"
                 />
               </div>
             </div>
@@ -79,6 +82,7 @@
                   type="number"
                   class="border-0 px-3 py-3 placeholder-blueGray-300 text-bgray-dark font-roboto bg-white rounded text-sm shadow focus:outline-light-purple-bg w-full "
                   value="1708094789" disabled
+                  aria-label="Matric Number"
                 />
               </div>
             </div>

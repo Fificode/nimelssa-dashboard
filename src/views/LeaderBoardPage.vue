@@ -1,6 +1,6 @@
 <template>
-    <div class="pb-28 pt-[40px] md:pt-12 mt-[70px]  min-h-[100vh]">
-    <leader-board-table />
+    <div class="pb-28 pt-[40px] md:pt-12 mt-[70px]  min-h-[100vh]" aria-label="Leaderboard Page">
+    <leader-board-table aria-label="Leaderboard Table"/>
     </div>
     </template>
     

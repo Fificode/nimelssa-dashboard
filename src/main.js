@@ -9,7 +9,7 @@ import Result from '@/views/ResultPage.vue'
 import LeaderBoard from '@/views/LeaderBoardPage.vue'
 import Settings from '@/views/SettingsPage.vue'
 import Tables from '@/views/TablesPage.vue'
-import ExternalQuiz from '@/layouts/ExternalQuizPage.vue'
+import ExternalQuiz from '@/views/ExternalQuizPage.vue'
 import CountdownQuiz from '@/components/Quiz/CountdownQuiz.vue'
 
 

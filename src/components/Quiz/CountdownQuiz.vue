@@ -1,6 +1,37 @@
 <template>
-<div>Countdown</div>
-</template>
-<script>
-
-</script>
+    <div>
+      <div v-if="countdown > 0" class="flex flex-col justify-center items-center mt-[100px]" >
+        <h1 class="text-gray-dark text-[70px]">GET READY !</h1>
+        <h1 class="text-gray-dark text-[70px]"> {{ countdown }}</h1>
+      </div>
+      <div v-else>
+       Quiz Questions
+       
+      </div>
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    data() {
+      return {
+        countdown: 5, // Initial countdown value
+      };
+    },
+    mounted() {
+      this.startCountdown();
+    },
+    methods: {
+      startCountdown() {
+        setInterval(() => {
+          if (this.countdown > 0) {
+            this.countdown--; // Decrement countdown value
+          } else {
+            clearInterval(); // Stop the interval when countdown reaches 0
+          }
+        }, 1000); // Update countdown every second (1000 milliseconds)
+      },
+    },
+  };
+  </script>
+  

@@ -1,8 +1,6 @@
 import { createApp } from 'vue'
-// import Vue from 'vue'
 import { createWebHistory, createRouter } from "vue-router"
 import App from './App.vue'
-import store from './store'
 import './index.css'
 import DashboardLayout from '@/layouts/DashboardLayout.vue'
 import Overview from '@/views/OverviewPage.vue'
@@ -12,8 +10,9 @@ import LeaderBoard from '@/views/LeaderBoardPage.vue'
 import Settings from '@/views/SettingsPage.vue'
 import Tables from '@/views/TablesPage.vue'
 import ExternalQuiz from '@/layouts/ExternalQuizPage.vue'
+import CountdownQuiz from '@/components/Quiz/CountdownQuiz.vue'
 
-// Vue.config.productionTip = false
+
 
 const routes = [
     {
@@ -55,6 +54,12 @@ const routes = [
       path: "/dashboard/quiz/startquiz",
       component: ExternalQuiz,
     },
+    {
+     
+      name: 'CountdownQuiz',
+      path: "/dashboard/quiz/startquiz/one",
+      component: CountdownQuiz,
+    },
    
   ];
   
@@ -64,9 +69,9 @@ const routes = [
   });
  
   const app = createApp(App)
-app.use(store)
+
 app.use(router)
-app.mount('#app')
-  // createApp(App).use(router).mount("#app");
+app.mount('#app');
+
   
 

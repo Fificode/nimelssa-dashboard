@@ -1,8 +1,8 @@
 <template>
     <div>
-      <sidebar />
+      <sidebar :headerText="headerText" :setActiveItem="setActiveItem" />
       <div class="relative md:ml-64">
-        <navbar />
+        <navbar :headerText="headerText" />
         <div class="px-4 md:px-10 mx-auto w-full bg-white-bg">
           <router-view />
         </div>
@@ -20,6 +20,16 @@
       Sidebar,
   
     },
+    data(){
+      return{
+        headerText: "Overview", // Initial header text
+      }
+    },
+    methods: {
+    setActiveItem(item) {
+      this.headerText = item.label; // Update header text when sidebar item is clicked
+    },
+  },
   };
   </script>
   

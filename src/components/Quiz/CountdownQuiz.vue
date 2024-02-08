@@ -1,11 +1,11 @@
 <template>
     <div>
       <div v-if="countdown > 0" class="flex flex-col justify-center items-center mt-[100px]" >
-        <h1 class="text-gray-dark text-[70px]">GET READY !</h1>
-        <h1 class="text-gray-dark text-[70px]"> {{ countdown }}</h1>
+        <h1 class="text-gray-dark text-[40px] md:text-[70px]">GET READY !</h1>
+        <h1 class="text-gray-dark text-[40px] md:text-[70px]"> {{ countdown }}</h1>
       </div>
       <div v-else>
-       Quiz Questions
+      <h1 class="text-gray-dark text-[40px]">Quiz Questions</h1> 
        
       </div>
     </div>

@@ -1,10 +1,10 @@
 <template>
    
     
-        <div class="flex justify-center items-center animate-fade bg-[#bbb] h-[100vh]" >
-      <div class="rounded-[10px] p-[20px] w-[30%] h-auto bg-white-bg flex flex-col items-center shadow-xl">
+        <div class="flex justify-center items-center bg-[#bbb] min-h-[100vh] py-[30px]" >
+      <div class="rounded-[10px] py-[30px] px-[20px] w-[100%] mx-[20px] md:w-[50%] lg:w-[30%] h-auto bg-white-bg flex flex-col items-center shadow-xl">
         <h1 class="text-[23px] font-roboto text-gray-dark font-[600] py-[5px]">
-          Question {{ currentQuestion }}/<span class="text-[17px]"> {{ questions.length }}</span>
+          Question {{ currentQuestion }}/{{ questions.length }}
         </h1>
         <div class="border-[2px] rounded-[50%] py-[7px] px-[10px] bg-[#fff]">
         <h3 :class="countDown < 10 ? 'text-red' : 'count-down'" class="text-[16px] font-roboto text-gray-dark font-[600] m-[5px]">
@@ -156,6 +156,10 @@
       this.countDown = 1;
       this.points = this.arr.size;
     },
+  },
+  mounted() {
+    // Start the countdown timer when the component is mounted
+    this.countDownTimer();
   },
 }
 </script>

@@ -56,10 +56,12 @@ export default {
           'opacity': '0',},
         '100%': {transform: 'translateX(0)',
           'opacity': '1', }, },
+          
        animation: {
         bounce: 'bounce 0.5s infinite',
         scale_up_tl: 'scale_up_tl 0.45s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
-         fade_in_right: 'fade_in_right 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both'
+         fade_in_right: 'fade_in_right 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
+       
       },
       
     },

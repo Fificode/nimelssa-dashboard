@@ -1,13 +1,11 @@
 <template>
-   
-    
-        <div class="flex justify-center items-center bg-[#bbb] min-h-[100vh] py-[30px]" >
-      <div class="rounded-[10px] py-[30px] px-[20px] w-[100%] mx-[20px] md:w-[50%] lg:w-[30%] h-auto bg-white-bg flex flex-col items-center shadow-xl">
-        <h1 class="text-[23px] font-roboto text-gray-dark font-[600] py-[5px]">
+    <div class="flex justify-center items-center bg-[#bbb] min-h-[100vh] py-[30px]" v-if="!showResult">
+      <div class="rounded-[10px] py-[30px] px-[20px] w-[100%] mx-[20px] md:w-[50%] lg:w-[30%] h-auto bg-white-bg flex flex-col items-center shadow-xl" >
+        <h1 class="text-[23px] font-roboto text-gray-dark font-[600] py-[5px] ">
           Question {{ currentQuestion }}/{{ questions.length }}
         </h1>
-        <div class="border-[2px] rounded-[50%] py-[7px] px-[10px] bg-[#fff]">
-        <h3 :class="countDown < 10 ? 'text-red' : 'count-down'" class="text-[16px] font-roboto text-gray-dark font-[600] m-[5px]">
+      <div class="border-[2px] rounded-[50%] w-[50px] py-[5px] px-[10px] bg-[#fff] flex justify-center items-center">
+        <h3 :class="countDown < 10 && 'text-red'" class="text-[16px] font-roboto text-gray-dark font-[600] m-[5px]">
           {{ countDown }}
         </h3>
     </div>
@@ -28,14 +26,14 @@
         <div class="">
           
       <button
-            class="text-[16px] text-center font-roboto border-none bg-badge-purple text-white mt-[10px] mb-[5px] p-2  cursor-pointer rounded-[5px] w-[250px]"
+            class="text-[16px] text-center font-roboto border-none bg-badge-purple text-white mt-[10px] mb-[5px] p-2  cursor-pointer rounded-[5px] w-[250px] hover:bg-gray"
             v-show="currentQuestion < questions.length"
             @click="handleNextQuestion()"
           >
             Next
           </button>
           <button
-            class="text-[16px] text-center font-roboto border-none bg-badge-purple text-white mt-[10px] mb-[5px] p-2  cursor-pointer rounded-[5px] w-[250px] "
+            class="text-[16px] text-center font-roboto border-none bg-badge-purple text-white mt-[10px] mb-[5px] p-2  cursor-pointer rounded-[5px] w-[250px] hover:bg-gray"
             v-show="currentQuestion === questions.length"
             @click="displayResult()"
           >
@@ -44,60 +42,18 @@
         </div>
       </div>
      
-       
+        </div> 
         <TotalPoints
         v-show="showResult"
         :totalPoints="points"
         :totalQuestions="questions.length"
       />
-    </div>
-        <!-- <QuizQuestions/> -->
-        <!-- <div v-if="quizFinished" class="p-2 flex flex-col items-center">
-            <h1 class="text-6xl font-mont font-bold capitalize">
-                <span>finished</span>
-            </h1>
-            <h2 class="text-3xl font-ssp font-bold capitalize mt-2">
-                <span class="px-2">score: {{ score }} / 5</span>
-            </h2>
-            <div class="mt-4 px-2">
-                <ul>
-                    <li class="mt-8" v-for="(row, index) in result" :key="index">
-                        <h1 class="text-4xl font-mont font-bold">{{ row.body }}</h1>
-                        <div class="text-2xl font-ssp capitalize mt-4">
-                            <div class="feedback flex items-center">
-                                <span>{{ row.userAnswer.body }}</span>
-                                <span class="px-3.5 py-3 m-2 bg-black text-white rounded-full flex justify-center items-center max-w-[3rem]"><i :class="['pi', row.answerisRight?'pi-check':'pi-times']"></i></span>
-                            </div>
-                            <div v-if="!row.answerisRight">
-                                <span class="font-bold">right answer is </span>
-                                <span class="font-regular">{{ row.rightAnswer.body }}</span> 
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="mt-4">
-                <button class="text-4xl font-ssp font-bold bg-black text-white capitalize px-4 py-2" @click="restartQuiz">restart quiz</button>
-            </div>
-        </div>
-        <div v-else id="question-box" class="relative overflow-hidden">
-            <template v-for="question of quiz.items" :key="question.id">
-                <transition name="fade" mode="out-in">
-                    <Question 
-                        :content="question" 
-                        v-if="question.id === currentQuestionId" 
-                        @answerPicked="loadNextQuestion"
-                        @noAnswerPicked="loadNextQuestion"
-                    />
-                </transition>
-            </template>
-        </div> -->
- 
+   
 </template>
 <script >
  import QuizQuestions from './QuizQuestions.json';
  import { shuffle } from 'lodash';
-
+import TotalPoints from './TotalPoints.vue';
     export default {
         props: ["totalPoints", "totalQuestions", "countDownTimerFn"],
     data() {
@@ -105,7 +61,7 @@
             currentQuestion: 1,
       points: null,
       answersArray: [],
-      arr: null,
+      arr: new Set(),
       countDown: 30,
       timer: null,
       startQuiz: false,
@@ -114,7 +70,9 @@
       options: shuffle(QuizQuestions[0].options)
         };
     },
-  
+  components: {
+TotalPoints,
+  },
     methods: {
     handleStartQuiz() {
       this.startQuiz = true;
@@ -155,6 +113,7 @@
       this.showResult = true;
       this.countDown = 1;
       this.points = this.arr.size;
+    
     },
   },
   mounted() {
@@ -163,4 +122,3 @@
   },
 }
 </script>
-

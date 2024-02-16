@@ -1,118 +1,103 @@
 [
   {
     "id": 1,
-    "question": "Which Vue directive is used for two-way binding?",
+    "question": "Which is not the aim of fixation?",
     "options": [
-      { "answer": "v-on", "isCorrect": false },
-      { "answer": "v-else", "isCorrect": false },
-      { "answer": "v-model", "isCorrect": true },
-      { "answer": "v-if", "isCorrect": false }
+      { "answer": "To prevent putrefaction", "isCorrect": false },
+      { "answer": "Remove excess water from the tissue", "isCorrect": false },
+      { "answer": "Render the tissue suitable for subsequent staining", "isCorrect": true },
+      { "answer": "Prevent osmotic swelling", "isCorrect": false }
     ]
   },
   {
     "id": 2,
-    "question": "Who is the creator of vueJS ?",
+    "question": "Which statement about Formaldehyde is false?",
     "options": [
-      { "answer": "Jeff Bezos", "isCorrect": false },
-      { "answer": "Elon Musk", "isCorrect": false },
-      { "answer": "Evan You", "isCorrect": true },
-      { "answer": "Tony Stark", "isCorrect": false }
+      { "answer": "It is a water soluble gas (sat. approx. 40%)", "isCorrect": false },
+      { "answer": "Concentrated formaldehyde is 40%", "isCorrect": false },
+      { "answer": "The best fixative for nucleic acids", "isCorrect": true },
+      { "answer": "Penetrates tissue rapidly", "isCorrect": false }
     ]
   },
   {
     "id": 3,
-    "question": "All are examples of vue directives EXCEPT",
+    "question": "Why isn't microwave fixation suitable for large specimens (of tissues/organs)?",
     "options": [
-      { "answer": "v-model", "isCorrect": false },
-      { "answer": "v-cloak", "isCorrect": false },
-      { "answer": "v-on", "isCorrect": false },
-      { "answer": "v-off", "isCorrect": true }
+      { "answer": "Using microwaves accelerates the rate of putrefaction", "isCorrect": false },
+      { "answer": "The microwave radiation can damage fine tissue structures", "isCorrect": false },
+      { "answer": "Microwave fixation is best suited on tissue blocks 10-12mm thick", "isCorrect": false },
+      { "answer": "It is unable to heat the center of the tissue/organ sufficiently without overheating the outside", "isCorrect": true }
     ]
   },
-
   {
     "id": 4,
-    "question": "Which version of Vue was Launched on 2020?",
+    "question": "Which is not the aim of fixation?",
     "options": [
-      { "answer": "Vue 2", "isCorrect": false },
-      { "answer": "Vue 1", "isCorrect": false },
-      { "answer": "Vue 4", "isCorrect": false },
-      { "answer": "Vue 3", "isCorrect": true }
+      { "answer": "To prevent putrefaction", "isCorrect": false },
+      { "answer": "Remove excess water from the tissue", "isCorrect": false },
+      { "answer": "Render the tissue suitable for subsequent staining", "isCorrect": true },
+      { "answer": "Prevent osmotic swelling", "isCorrect": false }
     ]
   },
   {
     "id": 5,
-    "question": "All are examples of life cyle methods in EXCEPT",
+    "question": "Which statement about Formaldehyde is false?",
     "options": [
-      { "answer": "isMounted()", "isCorrect": true },
-      { "answer": "beforeMount()", "isCorrect": false },
-      { "answer": "created()", "isCorrect": false },
-      { "answer": "updated()", "isCorrect": false }
+      { "answer": "It is a water soluble gas (sat. approx. 40%)", "isCorrect": false },
+      { "answer": "Concentrated formaldehyde is 40%", "isCorrect": false },
+      { "answer": "The best fixative for nucleic acids", "isCorrect": true },
+      { "answer": "Penetrates tissue rapidly", "isCorrect": false }
     ]
   },
   {
     "id": 6,
-    "question": "Which of the following is NOT a Javascript Framework",
+    "question": "Why isn't microwave fixation suitable for large specimens (of tissues/organs)?",
     "options": [
-      { "answer": "Vue", "isCorrect": false },
-      { "answer": "Styled-Components", "isCorrect": true },
-      { "answer": "React", "isCorrect": false },
-      { "answer": "Angular", "isCorrect": false }
+      { "answer": "Using microwaves accelerates the rate of putrefaction", "isCorrect": false },
+      { "answer": "The microwave radiation can damage fine tissue structures", "isCorrect": false },
+      { "answer": "Microwave fixation is best suited on tissue blocks 10-12mm thick", "isCorrect": false },
+      { "answer": "It is unable to heat the center of the tissue/organ sufficiently without overheating the outside", "isCorrect": true }
     ]
   },
   {
     "id": 7,
-    "question": "Composition API can be used on which version?",
+    "question": "Which is not the aim of fixation?",
     "options": [
-      { "answer": "Vue 5", "isCorrect": false },
-      { "answer": "Vue 2 Only", "isCorrect": false },
-      { "answer": "Vue 3 Only", "isCorrect": false },
-      { "answer": "Both Vue 2 and Vue 3", "isCorrect": true }
+      { "answer": "To prevent putrefaction", "isCorrect": false },
+      { "answer": "Remove excess water from the tissue", "isCorrect": false },
+      { "answer": "Render the tissue suitable for subsequent staining", "isCorrect": true },
+      { "answer": "Prevent osmotic swelling", "isCorrect": false }
     ]
   },
   {
     "id": 8,
-    "question": "What is the full form of NPM?",
+    "question": "Which statement about Formaldehyde is false?",
     "options": [
-      {
-        "answer": "New Package Manager",
-        "isCorrect": false
-      },
-      {
-        "answer": "Node Packet Manager",
-        "isCorrect": false
-      },
-      {
-        "answer": "Node Package Manage",
-        "isCorrect": false
-      },
-      {
-        "answer": "Node Package Manager",
-        "isCorrect": true
-      }
+      { "answer": "It is a water soluble gas (sat. approx. 40%)", "isCorrect": false },
+      { "answer": "Concentrated formaldehyde is 40%", "isCorrect": false },
+      { "answer": "The best fixative for nucleic acids", "isCorrect": true },
+      { "answer": "Penetrates tissue rapidly", "isCorrect": false }
     ]
   },
   {
     "id": 9,
-    "question": "Which of the following directives is used for iteration in Vuejs",
+    "question": "Why isn't microwave fixation suitable for large specimens (of tissues/organs)?",
     "options": [
-      { "answer": "v-model", "isCorrect": false },
-      { "answer": "v-for", "isCorrect": true },
-      { "answer": "v-if", "isCorrect": false },
-      { "answer": "v-show", "isCorrect": false }
+      { "answer": "Using microwaves accelerates the rate of putrefaction", "isCorrect": false },
+      { "answer": "The microwave radiation can damage fine tissue structures", "isCorrect": false },
+      { "answer": "Microwave fixation is best suited on tissue blocks 10-12mm thick", "isCorrect": false },
+      { "answer": "It is unable to heat the center of the tissue/organ sufficiently without overheating the outside", "isCorrect": true }
     ]
   },
+
   {
     "id": 10,
-    "question": "Did you enjoy using this app?",
+    "question": "Which is not the aim of fixation?",
     "options": [
-      { "answer": "yes", "isCorrect": true },
-      { "answer": "no", "isCorrect": false },
-      { "answer": "not sure", "isCorrect": false },
-      {
-        "answer": "don't want to answer",
-        "isCorrect": false
-      }
+      { "answer": "To prevent putrefaction", "isCorrect": false },
+      { "answer": "Remove excess water from the tissue", "isCorrect": false },
+      { "answer": "Render the tissue suitable for subsequent staining", "isCorrect": true },
+      { "answer": "Prevent osmotic swelling", "isCorrect": false }
     ]
   }
-]
+  ]

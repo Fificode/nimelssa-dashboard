@@ -1,103 +1,109 @@
 [
   {
-    "id": 1,
+    "id": 0,
     "question": "Which is not the aim of fixation?",
     "options": [
       { "answer": "To prevent putrefaction", "isCorrect": false },
       { "answer": "Remove excess water from the tissue", "isCorrect": false },
       { "answer": "Render the tissue suitable for subsequent staining", "isCorrect": true },
       { "answer": "Prevent osmotic swelling", "isCorrect": false }
+    ]
+  },
+  {
+    "id": 1,
+    "question": "Which statement about Formaldehyde is false?",
+    "options": [
+      { "answer": "It is a water soluble gas (sat. approx. 40%)", "isCorrect": false },
+      { "answer": "Concentrated formaldehyde is 40%", "isCorrect": false },
+      { "answer": "The best fixative for nucleic acids", "isCorrect": true },
+      { "answer": "Penetrates tissue rapidly", "isCorrect": false }
     ]
   },
   {
     "id": 2,
-    "question": "Which statement about Formaldehyde is false?",
+    "question": "Why isn't microwave fixation suitable for large specimens (of tissues/organs)?",
     "options": [
-      { "answer": "It is a water soluble gas (sat. approx. 40%)", "isCorrect": false },
-      { "answer": "Concentrated formaldehyde is 40%", "isCorrect": false },
-      { "answer": "The best fixative for nucleic acids", "isCorrect": true },
-      { "answer": "Penetrates tissue rapidly", "isCorrect": false }
+      { "answer": "Using microwaves accelerates the rate of putrefaction", "isCorrect": false },
+      { "answer": "The microwave radiation can damage fine tissue structures", "isCorrect": false },
+      { "answer": "Microwave fixation is best suited on tissue blocks 10-12mm thick", "isCorrect": false },
+      { "answer": "It is unable to heat the center of the tissue/organ sufficiently without overheating the outside", "isCorrect": true }
     ]
   },
   {
     "id": 3,
-    "question": "Why isn't microwave fixation suitable for large specimens (of tissues/organs)?",
+    "question": "Which is not the aim of fixation?",
     "options": [
-      { "answer": "Using microwaves accelerates the rate of putrefaction", "isCorrect": false },
-      { "answer": "The microwave radiation can damage fine tissue structures", "isCorrect": false },
-      { "answer": "Microwave fixation is best suited on tissue blocks 10-12mm thick", "isCorrect": false },
-      { "answer": "It is unable to heat the center of the tissue/organ sufficiently without overheating the outside", "isCorrect": true }
+      { "answer": "To prevent putrefaction", "isCorrect": false },
+      { "answer": "Remove excess water from the tissue", "isCorrect": false },
+      { "answer": "Render the tissue suitable for subsequent staining", "isCorrect": true },
+      { "answer": "Prevent osmotic swelling", "isCorrect": false }
     ]
   },
   {
     "id": 4,
-    "question": "Which is not the aim of fixation?",
+    "question": "Identify the vacutainer bottle",
+    "image": "/img/edta-bottle.jpg",
     "options": [
-      { "answer": "To prevent putrefaction", "isCorrect": false },
-      { "answer": "Remove excess water from the tissue", "isCorrect": false },
-      { "answer": "Render the tissue suitable for subsequent staining", "isCorrect": true },
-      { "answer": "Prevent osmotic swelling", "isCorrect": false }
+      { "answer": "Lithium heparin", "isCorrect": false },
+      { "answer": "Fluoride oxalate", "isCorrect": false },
+      { "answer": "EDTA", "isCorrect": true },
+      { "answer": "SST", "isCorrect": false }
     ]
   },
   {
     "id": 5,
-    "question": "Which statement about Formaldehyde is false?",
+    "question": "Identify the vacutainer bottle",
+    "image": "/img/fluoride-bottle.jpg",
     "options": [
-      { "answer": "It is a water soluble gas (sat. approx. 40%)", "isCorrect": false },
-      { "answer": "Concentrated formaldehyde is 40%", "isCorrect": false },
-      { "answer": "The best fixative for nucleic acids", "isCorrect": true },
-      { "answer": "Penetrates tissue rapidly", "isCorrect": false }
+      { "answer": "EDTA", "isCorrect": false },
+      { "answer": "Lithium heparin", "isCorrect": false },
+      { "answer": "Sodium citrate", "isCorrect": false },
+      { "answer": "Fluoride oxalate", "isCorrect": true }
     ]
   },
   {
     "id": 6,
-    "question": "Why isn't microwave fixation suitable for large specimens (of tissues/organs)?",
+    "question": "What test is the image below used for?",
+    "image": "/img/westergren-tube.jpg",
     "options": [
-      { "answer": "Using microwaves accelerates the rate of putrefaction", "isCorrect": false },
-      { "answer": "The microwave radiation can damage fine tissue structures", "isCorrect": false },
-      { "answer": "Microwave fixation is best suited on tissue blocks 10-12mm thick", "isCorrect": false },
-      { "answer": "It is unable to heat the center of the tissue/organ sufficiently without overheating the outside", "isCorrect": true }
+      { "answer": "ABO Blood Grouping", "isCorrect": false },
+      { "answer": "HB Electrophoresis", "isCorrect": false },
+      { "answer": "Erythrocyte sedimentation rate", "isCorrect": true },
+      { "answer": "Gram Staining", "isCorrect": false }
     ]
   },
   {
     "id": 7,
-    "question": "Which is not the aim of fixation?",
+    "question": "What test is the image below used for?",
+    "image": "/img/urinalysis-strip.jpg",
     "options": [
-      { "answer": "To prevent putrefaction", "isCorrect": false },
-      { "answer": "Remove excess water from the tissue", "isCorrect": false },
-      { "answer": "Render the tissue suitable for subsequent staining", "isCorrect": true },
-      { "answer": "Prevent osmotic swelling", "isCorrect": false }
+      { "answer": "Gram Staining", "isCorrect": false },
+      { "answer": "Stool Microscopy", "isCorrect": false },
+      { "answer": "Urinalysis", "isCorrect": true },
+      { "answer": "Urine Microscopy", "isCorrect": false }
     ]
   },
   {
     "id": 8,
-    "question": "Which statement about Formaldehyde is false?",
+    "question": "Identify the equipment",
+    "image": "/img/blood-mixer.jpg",
     "options": [
-      { "answer": "It is a water soluble gas (sat. approx. 40%)", "isCorrect": false },
-      { "answer": "Concentrated formaldehyde is 40%", "isCorrect": false },
-      { "answer": "The best fixative for nucleic acids", "isCorrect": true },
-      { "answer": "Penetrates tissue rapidly", "isCorrect": false }
-    ]
-  },
-  {
-    "id": 9,
-    "question": "Why isn't microwave fixation suitable for large specimens (of tissues/organs)?",
-    "options": [
-      { "answer": "Using microwaves accelerates the rate of putrefaction", "isCorrect": false },
-      { "answer": "The microwave radiation can damage fine tissue structures", "isCorrect": false },
-      { "answer": "Microwave fixation is best suited on tissue blocks 10-12mm thick", "isCorrect": false },
-      { "answer": "It is unable to heat the center of the tissue/organ sufficiently without overheating the outside", "isCorrect": true }
+      { "answer": "Water roller mixer", "isCorrect": false },
+      { "answer": "Pepper roller mixer", "isCorrect": false },
+      { "answer": "Urine roller mixer", "isCorrect": false },
+      { "answer": "Blood roller mixer", "isCorrect": true }
     ]
   },
 
   {
-    "id": 10,
-    "question": "Which is not the aim of fixation?",
+    "id": 9,
+    "question": "Identify the container",
+    "image": "/img/stool-container.jpg",
     "options": [
-      { "answer": "To prevent putrefaction", "isCorrect": false },
-      { "answer": "Remove excess water from the tissue", "isCorrect": false },
-      { "answer": "Render the tissue suitable for subsequent staining", "isCorrect": true },
-      { "answer": "Prevent osmotic swelling", "isCorrect": false }
+      { "answer": "Blood culture bottle", "isCorrect": false },
+      { "answer": "Urine container", "isCorrect": false },
+      { "answer": "Stool container", "isCorrect": true },
+      { "answer": "Swab stick", "isCorrect": false }
     ]
   }
   ]

@@ -12,9 +12,13 @@
         <p class="text-[17px] font-roboto text-gray-dark font-[500] py-[8px] text-center">
           {{ questions[currentQuestion - 1].question }}
         </p>
+        <div v-if="questions[currentQuestion - 1].image">
+  <!-- Display the image using an img tag -->
+  <img :src="questions[currentQuestion - 1].image" alt="Question Image" class="max-w-[300px] mx-auto my-4">
+</div>
         <div class="mt-4 flex flex-col">
           <button
-          class="border-[1px] text-[17px] font-roboto font-[500] border-gray-dark mt-[10px] p-2 cursor-pointer rounded-[5px] w-[250px] hover:bg-light-purple-bg hover:border-none"
+          class="border-[1px] text-[17px] font-roboto font-[500] border-gray-dark mt-[10px] p-2 cursor-pointer rounded-[5px] w-[250px] hover:bg-light-purple-bg  focus:bg-red"
             type="button"
             v-for="(item, index) in options"
             :key="index"

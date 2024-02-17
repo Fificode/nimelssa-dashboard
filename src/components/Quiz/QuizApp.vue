@@ -56,7 +56,7 @@
 </template>
 <script >
  import QuizQuestions from './QuizQuestions.json';
- import { shuffle } from 'lodash';
+//  import { shuffle } from 'lodash';
 import TotalPoints from './TotalPoints.vue';
     export default {
         props: ["totalPoints", "totalQuestions", "countDownTimerFn"],
@@ -71,7 +71,8 @@ import TotalPoints from './TotalPoints.vue';
       startQuiz: false,
       showResult: false,
       questions: QuizQuestions,
-      options: shuffle(QuizQuestions[0].options)
+      options: QuizQuestions[0].options,
+      // options: shuffle(QuizQuestions[0].options)
         };
     },
   components: {
@@ -86,6 +87,7 @@ TotalPoints,
       if (isCorrect) {
         this.answersArray.push(answer);
         this.arr = new Set(this.answersArray);
+        console.log('Correct answer numbers', this.arr.size);
       }
     },
 
@@ -107,7 +109,8 @@ TotalPoints,
     handleNextQuestion() {
       clearTimeout(this.timer);
       this.options = this.questions[this.currentQuestion].options;
-      this.options = shuffle(this.options);
+      // this.options;
+      // this.options = shuffle(this.options);
       this.currentQuestion += 1;
       this.countDown = 30;
       this.countDownTimer();
@@ -117,7 +120,8 @@ TotalPoints,
       this.showResult = true;
       this.countDown = 1;
       this.points = this.arr.size;
-    
+  
+  // console.log('show points', this.points);
     },
   },
   mounted() {

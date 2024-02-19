@@ -5,7 +5,7 @@
 <div class="py-[10px]">
     <router-link
   to="quiz/startquiz"
-  target="_blank"
+  target="_self"
   rel="noopener noreferrer"
   class="text-white font-roboto text-[14px] bg-purple border-none py-[12px] px-[30px] rounded-[5px] hover:bg-[#cd9cf2]"
   aria-label="Get Started with the Quiz"

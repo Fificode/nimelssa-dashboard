@@ -40,29 +40,7 @@
           class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-dark font-roboto"
           role="menuitem"
         >
-          Action
-        </a>
-        <a
-          href="javascript:void(0);"
-          class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-dark font-roboto"
-          role="menuitem"
-        >
-          Another action
-        </a>
-        <a
-          href="javascript:void(0);"
-          class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-dark font-roboto"
-          role="menuitem"
-        >
-          Something else here
-        </a>
-        <div class="h-0 my-2 border border-solid border-gray"></div>
-        <a
-          href="javascript:void(0);"
-          class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-dark font-roboto"
-          role="menuitem"
-        >
-          Seprated link
+          User profile
         </a>
       </div>
     </div>

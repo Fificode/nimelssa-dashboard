@@ -15,11 +15,11 @@
             <img
               alt="user representation"
               class="w-full rounded-full align-middle border-none shadow-lg"
-              :src="image"
+              :src="profile.image"
             />
            
           </span>
-          <p class="font-roboto font-[600] text-[14px] text-gray-dark pl-[6px] hidden lg:block ">Stephanie Fabian
+          <p class="font-roboto font-[600] text-[14px] text-gray-dark pl-[6px] hidden lg:block ">{{ profile.firstName }} {{ profile.surname }}
           </p>
         </div>
       </a>
@@ -33,7 +33,7 @@
           role="menu"
       aria-hidden="true"
       >
-      <p class="font-roboto text-[16px] text-gray-dark  py-2 px-4 block w-full whitespace-nowrap bg-transparent text-center font-[600] md:hidden">Stephanie Fabian</p>
+      <p class="font-roboto text-[16px] text-gray-dark  py-2 px-4 block w-full whitespace-nowrap bg-transparent text-center font-[600] md:hidden">{{ profile.firstName }} {{ profile.surname }}</p>
       <div class="h-0 my-2 border border-solid border-gray md:hidden"></div>
         <a
           href="javascript:void(0);"
@@ -48,16 +48,18 @@
   
   <script>
   import { createPopper } from "@popperjs/core";
-  
-  import image from "/img/team-2-800x800.jpg";
+  import axios from 'axios';
   
   export default {
     data() {
       return {
         dropdownPopoverShow: false,
-        image: image,
+        profile: [],
       };
     },
+    created() {
+    this.fetchData();
+  },
     methods: {
       toggleDropdown: function (event) {
         event.preventDefault();
@@ -70,6 +72,16 @@
           });
         }
       },
+      async fetchData() {
+      try {
+        const response = await axios.get('/static/data.json');
+        this.profile = response.data.profile;
+      //  console.log("Profile Image:", this.profile);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    },
+
     },
   };
   </script>

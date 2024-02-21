@@ -13,11 +13,11 @@
         </h3>
     </div>
         <p class="text-[17px] font-roboto text-gray-dark font-[500] py-[8px] text-center">
-          {{ questions[currentQuestion - 1].question }}
+          {{ questions[currentQuestion - 1]?.question }} 
         </p>
-        <div v-if="questions[currentQuestion - 1].image">
+        <div v-if="questions[currentQuestion - 1]?.image">
   <!-- Display the image using an img tag -->
-  <img :src="questions[currentQuestion - 1].image" alt="Question Image" class="max-w-[300px] mx-auto my-4">
+  <img :src="questions[currentQuestion - 1]?.image" alt="Question Image" class="max-w-[300px] mx-auto my-4">
 </div>
         <div class="mt-4 flex flex-col">
           <button
@@ -59,9 +59,10 @@
    
 </template>
 <script >
- import QuizQuestions from './QuizQuestions.json';
+//  import QuizQuestions from './QuizQuestions.json';
  import { shuffle } from 'lodash';
 import TotalPoints from './TotalPoints.vue';
+import axios from 'axios';
     export default {
         props: ["totalPoints", "totalQuestions", "countDownTimerFn"],
     data() {
@@ -70,19 +71,44 @@ import TotalPoints from './TotalPoints.vue';
       points: null,
       answersArray: [],
       arr: new Set(),
+      quiz: null,
       countDown: 10,
       timer: null,
       startQuiz: false,
       showResult: false,
       totalTime: 100,
-      questions: QuizQuestions,
-      options: shuffle(QuizQuestions[0].options)
+      questions: [],
+      options: [],
+     
         };
     },
+    created() {
+    this.fetchData();
+  },
   components: {
 TotalPoints,
   },
     methods: {
+      async fetchData() {
+      try {
+        const response = await axios.get('/static/data.json');
+        this.quiz = response.data.quiz;
+      //  console.log("Quiz:", this.quiz);
+      if (Array.isArray(this.quiz) && this.quiz.length > 0) {
+       // Initialize questions array with questions from quiz
+       this.questions = this.quiz.map(q => q.question);
+        // Shuffle options for the first question
+        this.shuffleOptions();
+    } else {
+      console.error('Quiz data is empty or not in the correct format.');
+    }
+        //  // Start quiz automatically after data is fetched
+         this.startQuiz = true;
+        this.countDownTimer();
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    },
     handleStartQuiz() {
       this.startQuiz = true;
       this.countDownTimer();
@@ -113,12 +139,26 @@ TotalPoints,
 
     handleNextQuestion() {
       clearTimeout(this.timer);
-      this.options = this.questions[this.currentQuestion].options;
-      this.options = shuffle(this.options);
-      this.currentQuestion += 1;
-      this.countDown = 10;
-      this.countDownTimer();
+  // Increment currentQuestion to move to the next question
+  this.currentQuestion++;
+  // Check if there are more questions available
+  if (this.currentQuestion <= this.questions.length) {
+    // Fetch options for the next question
+    this.shuffleOptions();
+    // Reset countdown timer
+    this.countDown = 10;
+    // Restart the countdown timer for the next question
+    this.countDownTimer();
+  } else {
+    // If there are no more questions, display the result
+    this.displayResult();
+  }
+     
     },
+    shuffleOptions() {
+    // Shuffle options for the current question
+    this.options = shuffle(this.quiz[this.currentQuestion - 1].options);
+  },
 
     displayResult() {
       this.showResult = true;
@@ -134,9 +174,6 @@ TotalPoints,
     },
     
   },
-  mounted() {
-    // Start the countdown timer when the component is mounted
-    this.countDownTimer();
-  },
+ 
 }
 </script>

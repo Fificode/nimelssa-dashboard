@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gradient-to-t from-white-bg to-light-purple-bg h-[100vh] flex flex-col justify-center items-center py-[20px]" aria-label="Quiz Landing Page">
+    <div class="bg-gradient-to-t from-white-bg to-light-purple-bg min-h-[100vh] flex flex-col justify-center items-center py-[20px]" aria-label="Quiz Landing Page">
        <div class=""> <img :src='nimelssaQuizTime' alt='Illustration of Quiz Time on Screen' className='w-[250px] h-[350px] md:w-[300px] md:h-[370px]' /></div>
         <div class="mb-[40px] animate-bounce" aria-label="Indicator of Start Quiz Button">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="purple" class="w-[50px] h-[50px]">

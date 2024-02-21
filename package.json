@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
+    "axios": "^1.6.7",
     "chart.js": "^2.9.4",
     "lodash": "^4.17.21",
     "primevue": "^3.48.1",

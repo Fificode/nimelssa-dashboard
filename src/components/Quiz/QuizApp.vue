@@ -95,8 +95,14 @@ TotalPoints,
         this.quiz = response.data.quiz;
       //  console.log("Quiz:", this.quiz);
       if (Array.isArray(this.quiz) && this.quiz.length > 0) {
-       // Initialize questions array with questions from quiz
-       this.questions = this.quiz.map(q => q.question);
+        this.questions = this.quiz.map(question => {
+        // Create a new object for each question including the question text and image
+        return {
+          question: question.question,
+          image: question.image,
+          options: question.options // Assuming options are already included in your quiz data
+        };
+      });
         // Shuffle options for the first question
         this.shuffleOptions();
     } else {
@@ -173,6 +179,7 @@ TotalPoints,
       return `${minutes} minute${minutes !== 1 ? 's' : ''} ${seconds} second${seconds !== 1 ? 's' : ''}`;
     },
     
+   
   },
  
 }

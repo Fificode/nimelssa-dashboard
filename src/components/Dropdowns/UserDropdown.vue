@@ -35,13 +35,17 @@
       >
       <p class="font-roboto text-[16px] text-gray-dark  py-2 px-4 block w-full whitespace-nowrap bg-transparent text-center font-[600] md:hidden">{{ profile.firstName }} {{ profile.surname }}</p>
       <div class="h-0 my-2 border border-solid border-gray md:hidden"></div>
-        <a
-          href="javascript:void(0);"
-          class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-dark font-roboto"
-          role="menuitem"
-        >
-          User profile
-        </a>
+       
+        <router-link
+  to="/dashboard/profile"
+  class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-dark font-roboto hover:bg-[#cd9cf2]"
+  aria-label="User Profile"
+  role="menuitem"
+>
+User profile
+</router-link>
+        
+      
       </div>
     </div>
   </template>

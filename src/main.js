@@ -7,7 +7,7 @@ import Overview from '@/views/OverviewPage.vue'
 import Quiz from '@/views/QuizPage.vue'
 import Result from '@/views/ResultPage.vue'
 import LeaderBoard from '@/views/LeaderBoardPage.vue'
-import Settings from '@/views/SettingsPage.vue'
+import UserProfile from '@/views/UserProfilePage.vue'
 import ExternalQuiz from '@/views/ExternalQuizPage.vue'
 import CountdownQuiz from '@/components/Quiz/CountdownQuiz.vue'
 
@@ -37,8 +37,8 @@ const routes = [
           component: LeaderBoard,
         },
         {
-          path: "/dashboard/settings",
-          component: Settings,
+          path: "/dashboard/profile",
+          component: UserProfile,
         },
       ],
     },

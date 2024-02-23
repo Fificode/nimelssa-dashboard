@@ -2,6 +2,10 @@
    "results": [],
    "leader": [],
    "profile": { "id": 1, "firstName": "Ryan", "surname": "Destiny", "image": "/img/profileImage.jpg" },
+   "scholarOfTheWeek": {"number": 0},
+   "scholarOfTheMonth": {"number": 1},
+   "scholarOfTheSemester": {"number": 0},
+   "totalBadges": {"number": 0},
    "quiz": [
     {
       "id": 1,
@@ -46,7 +50,7 @@
     {
       "id": 5,
       "question": "Identify the vacutainer bottle",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTixHoadr0_Adt5mzjdXnFVEnf5nz_vcYOdkRgFfrf7yg&s",
+      "image": "/img/edta-bottle.jpg",
       "options": [
         { "answer": "Lithium heparin", "isCorrect": false },
         { "answer": "Fluoride oxalate", "isCorrect": false },

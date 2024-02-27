@@ -2,10 +2,10 @@
    "results": [],
    "leader": [],
    "profile": { "id": 1, "firstName": "Ryan", "surname": "Destiny", "image": "/img/profileImage.jpg" },
-   "scholarOfTheWeek": {"number": 0},
+   "scholarOfTheWeek": {"number": 1},
    "scholarOfTheMonth": {"number": 1},
-   "scholarOfTheSemester": {"number": 0},
-   "totalBadges": {"number": 0},
+   "scholarOfTheSemester": {"number": 1},
+   "totalBadges": {"number": 3},
    "quiz": [
     {
       "id": 1,

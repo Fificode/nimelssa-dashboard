@@ -39,7 +39,7 @@
     },
     {
       "id": 4,
-      "question": "What is the full meanung of MLS?",
+      "question": "What is the full meaning of MLS?",
       "options": [
         { "answer": "Metropolitan Laboratory Science", "isCorrect": false },
         { "answer": "Middle Learning School", "isCorrect": false },

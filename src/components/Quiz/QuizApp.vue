@@ -58,8 +58,7 @@
       />
    
 </template>
-<script >
-//  import QuizQuestions from './QuizQuestions.json';
+<script>
  import { shuffle } from 'lodash';
 import TotalPoints from './TotalPoints.vue';
 import axios from 'axios';

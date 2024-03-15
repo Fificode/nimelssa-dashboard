@@ -62,7 +62,7 @@
     {
       "id": 5,
       "question": "Identify the vacutainer bottle",
-      "image": "/img/edta-bottle.jpg",
+      "image": "/img/edtaBottle.jpg",
       "options": [
         { "answer": "Lithium heparin", "isCorrect": false },
         { "answer": "Fluoride oxalate", "isCorrect": false },
@@ -73,7 +73,7 @@
     {
       "id": 6,
       "question": "Identify the vacutainer bottle",
-      "image": "/img/fluoride-bottle.jpg",
+      "image": "/img/fluorideBottle.jpg",
       "options": [
         { "answer": "EDTA", "isCorrect": false },
         { "answer": "Lithium heparin", "isCorrect": false },
@@ -84,7 +84,7 @@
     {
       "id": 7,
       "question": "What test is the image below used for?",
-      "image": "/img/westergren-tube.jpg",
+      "image": "/img/westergrenTube.jpg",
       "options": [
         { "answer": "ABO Blood Grouping", "isCorrect": false },
         { "answer": "HB Electrophoresis", "isCorrect": false },
@@ -95,7 +95,7 @@
     {
       "id": 8,
       "question": "What test is the image below used for?",
-      "image": "/img/urinalysis-strip.jpg",
+      "image": "/img/urinalysisStrip.jpg",
       "options": [
         { "answer": "Gram Staining", "isCorrect": false },
         { "answer": "Stool Microscopy", "isCorrect": false },
@@ -106,7 +106,7 @@
     {
       "id": 9,
       "question": "Identify the equipment",
-      "image": "/img/blood-mixer.jpg",
+      "image": "/img/bloodMixer.jpg",
       "options": [
         { "answer": "Water roller mixer", "isCorrect": false },
         { "answer": "Pepper roller mixer", "isCorrect": false },
@@ -118,7 +118,7 @@
     {
       "id": 10,
       "question": "Identify the container",
-      "image": "/img/stool-container.jpg",
+      "image": "/img/stoolContainer.jpg",
       "options": [
         { "answer": "Blood culture bottle", "isCorrect": false },
         { "answer": "Urine container", "isCorrect": false },

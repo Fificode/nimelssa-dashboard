@@ -97,217 +97,29 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 text-left flex items-center font-roboto"
-              >
-               
-                <span
-                  class=" font-bold"
-                  :class="[
-                  color === 'light' ? 'text-gray-dark' : 'text-white',
-                ]"
-                >
-               1
-                </span>
-              </th>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                12/04/2023
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-               50%
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto font-[600]"
-              >
-              <a href="#" class="text-purple"> view</a> 
-              </td>
-            
-            </tr>
-           
-            <!-- <tr>
-              <th
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 text-left flex items-center font-roboto"
-              >
-               
-                <span
-                  class=" font-bold"
-                  :class="[
-                  color === 'light' ? 'text-gray-dark' : 'text-white',
-                ]"
-                >
-                  2
-                </span>
-              </th>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                14/05/2023
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-               60%
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto font-[600]"
-              >
-              <a href="#" class="text-purple"> view</a> 
-              </td>
-            
-            </tr> -->
-            <!-- <tr>
-              <th
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto text-left flex items-center"
-              >
-               
-                <span
-                  class=" font-bold"
-                  :class="[
-                  color === 'light' ? 'text-gray-dark' : 'text-white',
-                ]"
-                >
-                  3
-                </span>
-              </th>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                18/06/2023
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-               70%
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto font-[600]"
-              >
-              <a href="#" class="text-purple"> view</a> 
-              </td>
-            
-            </tr> -->
-            <!-- <tr>
-              <th
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 text-left flex items-center font-roboto"
-              >
-               
-                <span
-                  class=" font-bold"
-                  :class="[
-                  color === 'light' ? 'text-gray-dark' : 'text-white',
-                ]"
-                >
-                  4
-                </span>
-              </th>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                22/07/2023
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-               70%
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto font-[600]"
-              >
-              <a href="#" class="text-purple"> view</a> 
-              </td>
-            
-            </tr> -->
-            <!-- <tr>
-              <th
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 text-left flex items-center font-roboto"
-              >
-               
-                <span
-                  class=" font-bold"
-                  :class="[
-                  color === 'light' ? 'text-gray-dark' : 'text-white',
-                ]"
-                >
-                  5
-                </span>
-              </th>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                18/08/2023
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-               80%
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto font-[600]"
-              >
-               <a href="#" class="text-purple "> view</a> 
-              </td>
-            
-            </tr> -->
-           
-          
+            <tr v-for="(item, index) in displayedResults" :key="index">
+    <!-- Serial Number -->
+    <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 text-left flex items-center font-roboto">
+      <span class="font-bold" :class="[color === 'light' ? 'text-gray-dark' : 'text-white']">{{ index + 1 }}</span>
+    </th>
+    <!-- Date -->
+    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto">{{ item.date }}</td>
+    <!-- Empty Column -->
+    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"></td>
+    <!-- Score -->
+    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto">{{ item.score }}</td>
+    <!-- Empty Column -->
+    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"></td>
+    <!-- View Test -->
+    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto font-[600]">
+      <a href="#" class="text-purple">view </a>
+    </td>
+  </tr>
           </tbody>
         </table>
-        <div class="p-[20px]"><a href='#' class="text-purple font-roboto font-[600] text-[14px]">See more results</a></div> 
+        <div class="p-[20px]">
+          <button v-if="showSeeMoreButton" @click="seeMoreResults" class="text-purple font-roboto font-[600] text-[14px]">See more results</button>
+        </div> 
       </div>
     </div>
   </template>
@@ -319,7 +131,9 @@ import axios from 'axios';
     data() {
       return {
      results: [],
-     result: [],
+     displayedResults: [],
+     currentPage: 1,
+      itemsPerPage: 5,
       };
     },
 
@@ -343,21 +157,27 @@ import axios from 'axios';
       try {
         const response = await axios.get('/static/data.json');
         this.results = response.data.results;
-        this.result = this.results.map(res => {
-        return {
-          id: res.id,
-          date: res.date,
-          score: res.score 
-        };
-        
-      });
-       console.log("Fetched Results", this.results);
-       console.log("Mapped Results", this.result);
+        this.displayedResults = this.results.slice(0, this.itemsPerPage);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     },
-    }
+    seeMoreResults() {
+      const nextPageStartIndex = this.currentPage * this.itemsPerPage;
+      const nextPageEndIndex = nextPageStartIndex + this.itemsPerPage;
+      
+      // Add 5 more results to displayedResults
+      this.displayedResults = this.displayedResults.concat(this.results.slice(nextPageStartIndex, nextPageEndIndex));
+      
+      // Increment current page number
+      this.currentPage++;
+    },
+    },
+    computed: {
+      showSeeMoreButton() {
+      return this.currentPage * this.itemsPerPage < this.results.length;
+    },
+  },
   };
   </script>
   

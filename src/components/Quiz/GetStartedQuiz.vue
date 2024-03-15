@@ -1,6 +1,6 @@
 <template>
 <div class="flex flex-col items-center justify-center w-full"  aria-label="Quiz Introduction">
-<img :src="peopleQuestion" class="w-[350px] h-[300px]" alt="Illustration of a boy and girl standing and questioning" />
+<img :src="peopleQuestion" class="w-[350px] h-[300px]" alt="Illustration of a man and woman puzzled, with a question mark hovering above them." />
 <p class="py-[20px] text-[22px] font-[600] text-text-black font-roboto">Ready for some quiz?</p>
 <div class="py-[10px]">
     <router-link

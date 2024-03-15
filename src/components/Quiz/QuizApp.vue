@@ -15,9 +15,9 @@
         <p class="text-[17px] font-roboto text-gray-dark font-[500] py-[8px] text-center">
           {{ questions[currentQuestion - 1]?.question }} 
         </p>
-        <div v-if="questions[currentQuestion - 1]?.image">
+        <div v-if="questions[currentQuestion - 1]?.image" class="flex justify-center items-center">
   <!-- Display the image using an img tag -->
-  <img :src="questions[currentQuestion - 1]?.image" alt="Question Image" class="max-w-[300px] mx-auto my-4">
+  <img :src="questions[currentQuestion - 1]?.image" alt="Question Image" class="max-w-[300px] mx-2 my-4">
 </div>
         <div class="mt-4 flex flex-col">
           <button
@@ -84,6 +84,13 @@ import axios from 'axios';
     created() {
     this.fetchData();
   },
+  mounted() {
+    window.addEventListener('beforeunload', this.confirmLeave);
+  },
+  beforeUnmount() {
+    window.removeEventListener('beforeunload', this.confirmLeave);
+  },
+  
   components: {
 TotalPoints,
   },
@@ -92,14 +99,13 @@ TotalPoints,
       try {
         const response = await axios.get('/static/data.json');
         this.quiz = response.data.quiz;
-      //  console.log("Quiz:", this.quiz);
       if (Array.isArray(this.quiz) && this.quiz.length > 0) {
         this.questions = this.quiz.map(question => {
         // Create a new object for each question including the question text and image
         return {
           question: question.question,
           image: question.image,
-          options: question.options // Assuming options are already included in your quiz data
+          options: question.options 
         };
       });
         // Shuffle options for the first question
@@ -177,9 +183,20 @@ TotalPoints,
       const seconds = totalSeconds % 60;
       return `${minutes} minute${minutes !== 1 ? 's' : ''} ${seconds} second${seconds !== 1 ? 's' : ''}`;
     },
-    
+    confirmLeave(event) {
+      // Prepare the confirmation message
+      const confirmationMessage = "Are you sure you want to leave? If you leave, your quiz progress will be lost.";
+
+      // Set the event.returnValue (required for some browsers)
+      event.returnValue = confirmationMessage;
+      console.log("confirmation message", confirmationMessage);
+      // Return the confirmation message (not required for all browsers)
+      return confirmationMessage;
+     
+    } 
    
   },
- 
+  
+  
 }
 </script>

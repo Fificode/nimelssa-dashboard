@@ -108,7 +108,7 @@
                   color === 'light' ? 'text-gray-dark' : 'text-white',
                 ]"
                 >
-                  1
+               1
                 </span>
               </th>
               <td
@@ -139,7 +139,7 @@
             
             </tr>
            
-            <tr>
+            <!-- <tr>
               <th
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 text-left flex items-center font-roboto"
               >
@@ -179,8 +179,8 @@
               <a href="#" class="text-purple"> view</a> 
               </td>
             
-            </tr>
-            <tr>
+            </tr> -->
+            <!-- <tr>
               <th
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto text-left flex items-center"
               >
@@ -220,8 +220,8 @@
               <a href="#" class="text-purple"> view</a> 
               </td>
             
-            </tr>
-            <tr>
+            </tr> -->
+            <!-- <tr>
               <th
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 text-left flex items-center font-roboto"
               >
@@ -261,8 +261,8 @@
               <a href="#" class="text-purple"> view</a> 
               </td>
             
-            </tr>
-            <tr>
+            </tr> -->
+            <!-- <tr>
               <th
                 class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 text-left flex items-center font-roboto"
               >
@@ -302,7 +302,7 @@
                <a href="#" class="text-purple "> view</a> 
               </td>
             
-            </tr>
+            </tr> -->
            
           
           </tbody>
@@ -313,14 +313,19 @@
   </template>
   <script>
 
-  
+import axios from 'axios';
   
   export default {
     data() {
       return {
-     
+     results: [],
+     result: [],
       };
     },
+
+    created() {
+    this.fetchData();
+  },
     components: {
   
     },
@@ -333,6 +338,26 @@
         },
       },
     },
+    methods: {
+      async fetchData() {
+      try {
+        const response = await axios.get('/static/data.json');
+        this.results = response.data.results;
+        this.result = this.results.map(res => {
+        return {
+          id: res.id,
+          date: res.date,
+          score: res.score 
+        };
+        
+      });
+       console.log("Fetched Results", this.results);
+       console.log("Mapped Results", this.result);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    },
+    }
   };
   </script>
   

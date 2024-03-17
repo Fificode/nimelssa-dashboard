@@ -86,7 +86,7 @@
             </div>
           </div>
           <!-- Form -->
-          <form class="mt-6 mb-4 md:hidden">
+          <!-- <form class="mt-6 mb-4 md:hidden">
             <div class="mb-3 pt-0">
               <input
                 type="text"
@@ -94,9 +94,9 @@
                 class="border-[1px] rounded-[5px] border-gray-dark px-3 py-3 placeholder-gray-dark text-gray-dark relative bg-white text-sm outline-none focus:border-[2px] focus:outline-none focus:border-light-purple-bg w-full pl-[10px]"
               />
             </div>
-          </form>
+          </form> -->
   
-          <ul class="md:flex-col md:min-w-full flex flex-col list-none">
+          <ul class="md:flex-col md:min-w-full flex flex-col list-none my-[10px]">
     <li v-for="link in links" :key="link.path" class="items-center " >
       <router-link :to="link.path" v-slot="{ href}">
         <a

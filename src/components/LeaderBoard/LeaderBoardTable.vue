@@ -5,13 +5,34 @@
     >
       <div class="rounded-t mb-0 px-4 py-3 border-0">
         <div class="flex flex-wrap items-center">
-          <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+          <div class="relative w-full px-4 max-w-full flex justify-between flex-col sm:flex-row">
             <h3
-              class="font-semibold text-lg font-roboto"
+              class="font-semibold text-lg font-roboto py-[5px]"
               :class="[color === 'light' ? 'text-gray-dark' : 'text-white']"
             >
               Leader Board
             </h3>
+              <!-- Search -->
+        <form
+          class="flex  flex-wrap items-center mr-[5px]" aria-label="Search Form"
+        >
+          <div class="relative flex w-full flex-wrap items-stretch">
+            <span
+              class="z-10 h-full leading-snug font-normal text-center text-gray-dark absolute bg-transparent rounded text-base items-center justify-center w-8 pl-[10px] py-[8px]" aria-hidden="true"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#717171" class="m-[3px] w-[16px] h-[16px]" aria-label="Search icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+</svg>
+
+            </span>
+            <input
+              type="text"
+              placeholder="Search here..."
+              class="border-[2px] rounded-[5px] border-gray-light px-3 py-2 placeholder-gray-dark text-gray-dark relative bg-white text-sm outline-none focus:border-[2px] focus:outline-none focus:border-light-purple-bg w-full pl-[35px]"
+              aria-label="Search Input" 
+            />
+          </div>
+        </form>
           </div>
         </div>
       </div>
@@ -97,233 +118,51 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 text-left flex items-center font-roboto"
-              >
-               
-                <span
-                  class=" font-bold"
-                  :class="[
-                  color === 'light' ? 'text-gray-dark' : 'text-white',
-                ]"
-                >
-                  1
-                </span>
-              </th>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                Ayinde Oluwafunke
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-               500
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-             95%
-              </td>
-            
-            </tr>
-           
-            <tr>
-              <th
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 text-left flex items-center font-roboto"
-              >
-               
-                <span
-                  class=" font-bold"
-                  :class="[
-                  color === 'light' ? 'text-gray-dark' : 'text-white',
-                ]"
-                >
-                  2
-                </span>
-              </th>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                Fabian Marvel
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-               500
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-              92%
-              </td>
-            
-            </tr>
-            <tr>
-              <th
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto text-left flex items-center"
-              >
-               
-                <span
-                  class=" font-bold"
-                  :class="[
-                  color === 'light' ? 'text-gray-dark' : 'text-white',
-                ]"
-                >
-                  3
-                </span>
-              </th>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-               Akiga Stephanie
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-               500
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-          90% 
-              </td>
-            
-            </tr>
-            <tr>
-              <th
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 text-left flex items-center font-roboto"
-              >
-               
-                <span
-                  class=" font-bold"
-                  :class="[
-                  color === 'light' ? 'text-gray-dark' : 'text-white',
-                ]"
-                >
-                  4
-                </span>
-              </th>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                Adeyemi Bola
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-               400
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-          85%
-              </td>
-            
-            </tr>
-            <tr>
-              <th
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 text-left flex items-center font-roboto"
-              >
-               
-                <span
-                  class=" font-bold"
-                  :class="[
-                  color === 'light' ? 'text-gray-dark' : 'text-white',
-                ]"
-                >
-                  5
-                </span>
-              </th>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                Kingsley Paul
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-               300
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-                
-              </td>
-              <td
-                class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"
-              >
-               82%
-              </td>
-            
-            </tr>
-           
-          
+            <tr v-for="(item, index) in displayedLeaders" :key="index">
+    <!-- Serial Number -->
+    <th class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 text-left flex items-center font-roboto">
+      <span class="font-bold" :class="[color === 'light' ? 'text-gray-dark' : 'text-white']">{{ index + 1 }}</span>
+    </th>
+    <!-- Name -->
+    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto">{{ item.name }}</td>
+    <!-- Empty Column -->
+    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"></td>
+    <!-- Level -->
+    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto">{{ item.level }}</td>
+    <!-- Empty Column -->
+    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"></td>
+    <!-- Score -->
+    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto font-[600]">
+      {{ item.score }}
+    </td>
+  </tr>
           </tbody>
         </table>
-       <div class="p-[20px]"><a href='#' class="text-purple font-roboto font-[600] text-[14px]">See more participants</a></div> 
+        <div class="p-[20px]">
+          <button v-if="showSeeMoreButton" @click="seeMoreParticipants" class="text-purple font-roboto font-[600] text-[14px]">See more participants</button>
+        </div>
       </div>
     </div>
   </template>
   <script>
 
-  
+import axios from 'axios';
   
   export default {
     data() {
       return {
-     
+        leaders: [],
+     displayedLeaders: [],
+     currentPage: 1,
+      itemsPerPage: 5,
       };
     },
     components: {
   
     },
+    created() {
+    this.fetchData();
+  },
     props: {
       color: {
         default: "light",
@@ -333,6 +172,32 @@
         },
       },
     },
+    methods: {
+      async fetchData() {
+      try {
+        const response = await axios.get('/static/data.json');
+        this.leaders = response.data.leaders;
+        this.displayedLeaders = this.leaders.slice(0, this.itemsPerPage);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    },
+    seeMoreParticipants() {
+      const nextPageStartIndex = this.currentPage * this.itemsPerPage;
+      const nextPageEndIndex = nextPageStartIndex + this.itemsPerPage;
+      
+      // Add 5 more results to displayedLeaders
+      this.displayedLeaders = this.displayedLeaders.concat(this.leaders.slice(nextPageStartIndex, nextPageEndIndex));
+      
+      // Increment current page number
+      this.currentPage++;
+    },
+    },
+    computed: {
+      showSeeMoreButton() {
+      return this.currentPage * this.itemsPerPage < this.leaders.length;
+    },
+  },
   };
   </script>
   

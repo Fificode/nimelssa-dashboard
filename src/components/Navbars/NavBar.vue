@@ -11,7 +11,7 @@
        {{ headerText }}
         </p>
         <!-- Form -->
-        <form
+        <!-- <form
           class="md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3" aria-label="Search Form"
         >
           <div class="relative flex w-full flex-wrap items-stretch">
@@ -30,7 +30,7 @@
               aria-label="Search Input" 
             />
           </div>
-        </form>
+        </form> -->
         <!-- User -->
         <ul class="flex-col md:flex-row list-none items-center hidden md:flex" aria-label="User Menu">
           <user-dropdown />

@@ -5,13 +5,34 @@
     >
       <div class="rounded-t mb-0 px-4 py-3 border-0">
         <div class="flex flex-wrap items-center">
-          <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+          <div class="relative w-full px-4 max-w-full flex justify-between flex-col sm:flex-row">
             <h3
-              class="font-semibold text-lg font-roboto"
+              class="font-semibold text-lg font-roboto py-[5px]"
               :class="[color === 'light' ? 'text-gray-dark' : 'text-white']"
             >
               Quiz Results
             </h3>
+             <!-- Search -->
+        <form
+          class="flex flex-row flex-wrap items-center lg:ml-auto mr-[5px]" aria-label="Search Form"
+        >
+          <div class="relative flex w-full flex-wrap items-stretch">
+            <span
+              class="z-10 h-full leading-snug font-normal text-center text-gray-dark absolute bg-transparent rounded text-base items-center justify-center w-8 pl-[10px] py-[8px]" aria-hidden="true"
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#717171" class="m-[3px] w-[16px] h-[16px]" aria-label="Search icon">
+  <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+</svg>
+
+            </span>
+            <input
+              type="text"
+              placeholder="Search here..."
+              class="border-[2px] rounded-[5px] border-gray-light px-3 py-2 placeholder-gray-dark text-gray-dark relative bg-white text-sm outline-none focus:border-[2px] focus:outline-none focus:border-light-purple-bg w-full pl-[35px]"
+              aria-label="Search Input" 
+            />
+          </div>
+        </form>
           </div>
         </div>
       </div>

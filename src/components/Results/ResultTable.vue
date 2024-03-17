@@ -139,7 +139,7 @@
           </tbody>
         </table>
         <div class="p-[20px]">
-          <button v-if="showSeeMoreButton" @click="seeMoreResults" class="text-purple font-roboto font-[600] text-[14px]">See more results</button>
+          <button v-if="showSeeMoreButton" @click="seeMoreResults" class="text-purple font-roboto font-[600] text-[15px]">See more results</button>
         </div> 
       </div>
     </div>

@@ -14,7 +14,7 @@
           >
             <img
               alt="user representation"
-              class="w-full rounded-full align-middle border-none shadow-lg"
+              class="w-full rounded-[50%] h-[100%] align-middle border-none shadow-lg"
               :src="profile.image"
             />
            

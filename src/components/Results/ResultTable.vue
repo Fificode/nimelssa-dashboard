@@ -30,6 +30,7 @@
               placeholder="Search here..."
               class="border-[2px] rounded-[5px] border-gray-light px-3 py-2 placeholder-gray-dark text-gray-dark relative bg-white text-sm outline-none focus:border-[2px] focus:outline-none focus:border-light-purple-bg w-full pl-[35px]"
               aria-label="Search Input" 
+              v-model="searchQuery"
             />
           </div>
         </form>
@@ -155,11 +156,14 @@ import axios from 'axios';
      displayedResults: [],
      currentPage: 1,
       itemsPerPage: 5,
+      searchQuery: ''
       };
     },
 
     created() {
-    this.fetchData();
+      
+  this.fetchData();
+   
   },
     components: {
   
@@ -178,7 +182,7 @@ import axios from 'axios';
       try {
         const response = await axios.get('/static/data.json');
         this.results = response.data.results;
-        this.displayedResults = this.results.slice(0, this.itemsPerPage);
+        this.filterResults();
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -193,10 +197,27 @@ import axios from 'axios';
       // Increment current page number
       this.currentPage++;
     },
+    filterResults() {
+      const query = this.searchQuery.toLowerCase();
+      this.displayedResults = this.results.filter(result => {
+        return (
+          result.date.toLowerCase().includes(query) ||
+          result.score.toLowerCase().includes(query)
+        );
+      }).slice(0, this.itemsPerPage);
+     
     },
+    },
+    
     computed: {
       showSeeMoreButton() {
       return this.currentPage * this.itemsPerPage < this.results.length;
+    },
+  },
+  watch: {
+    searchQuery() {
+      this.filterResults();
+      this.currentPage = 1; // Reset current page when search query changes
     },
   },
   };

@@ -4,7 +4,7 @@
 <p class="py-[20px] text-[22px] font-[600] text-text-black font-roboto">Ready for some quiz?</p>
 <div class="py-[10px]">
     <router-link
-  to="quiz/startquiz"
+  to="quiz/getstarted"
   target="_self"
   rel="noopener noreferrer"
   class="text-white font-roboto text-[14px] bg-purple border-none py-[12px] px-[30px] rounded-[5px] hover:bg-[#cd9cf2]"

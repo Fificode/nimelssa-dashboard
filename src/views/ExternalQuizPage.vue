@@ -8,7 +8,7 @@
 </div>
         <div class="py-[10px]">
     <router-link
-  to="startquiz/one"
+  to="getstarted/startquiz"
   class="text-white-bg font-roboto text-[14px] bg-purple border-none py-[12px] px-[30px] rounded-[5px] hover:bg-[#cd9cf2]"
 >
   Start Quiz

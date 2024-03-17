@@ -45,13 +45,13 @@ const routes = [
     {
      
       name: 'ExternalQuiz',
-      path: "/dashboard/quiz/startquiz",
+      path: "/dashboard/quiz/getstarted",
       component: ExternalQuiz,
     },
     {
      
       name: 'CountdownQuiz',
-      path: "/dashboard/quiz/startquiz/one",
+      path: "/dashboard/quiz/getstarted/startquiz",
       component: CountdownQuiz,
     },
    

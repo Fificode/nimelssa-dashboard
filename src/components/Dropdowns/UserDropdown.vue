@@ -42,7 +42,7 @@
   aria-label="User Profile"
   role="menuitem"
 >
-User profile
+My profile
 </router-link>
         
       
@@ -62,7 +62,14 @@ User profile
       };
     },
     created() {
+      const storedProfile = localStorage.getItem('profile');
+  if (storedProfile) {
+    this.profile = JSON.parse(storedProfile);
+  } else {
+    // Fetch profile data from JSON file if not found in localStorage
     this.fetchData();
+  }
+   
   },
     methods: {
       toggleDropdown: function (event) {

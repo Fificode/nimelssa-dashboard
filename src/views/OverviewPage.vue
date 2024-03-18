@@ -74,7 +74,14 @@
 
     },
     created() {
-    this.fetchData();
+      const storedProfile = localStorage.getItem('profile');
+  if (storedProfile) {
+    this.profile = JSON.parse(storedProfile);
+  } 
+   else{ 
+    this.fetchProfileData();
+  }   
+  this.fetchAdditionalData();
   },
     components: {
       BadgeCard,
@@ -82,10 +89,19 @@
      
     },
     methods: {
-      async fetchData() {
+      async fetchProfileData() {
+    try {
+      const response = await axios.get('/static/data,son'); // Example endpoint for fetching profile data
+      this.profile = response.data.profile;
+      // Only fetch additional data if profile data is successfully fetched
+      this.fetchAdditionalData();
+    } catch (error) {
+      console.error('Error fetching profile data:', error);
+    }
+  },
+      async fetchAdditionalData() {
       try {
         const response = await axios.get('/static/data.json');
-        this.profile = response.data.profile;
         this.scholarOfTheWeek = response.data.scholarOfTheWeek.number;
         this.scholarOfTheMonth= response.data.scholarOfTheMonth.number;
         this.scholarOfTheSemester = response.data.scholarOfTheSemester.number;

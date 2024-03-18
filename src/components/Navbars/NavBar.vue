@@ -1,6 +1,6 @@
 <template>
     <!-- Navbar -->
-    <nav class="fixed hidden  md:top-0 md:left-[256px] w-[calc(100%_-_256px)] z-10 bg-white md:flex-row md:flex-nowrap md:justify-start md:flex items-center p-[11px] shadow-sm" aria-label="Navigation">
+    <nav class="fixed hidden  md:top-0 md:left-[256px] w-[calc(100%_-_256px)] z-40 bg-white md:flex-row md:flex-nowrap md:justify-start md:flex items-center p-[11px] shadow-sm" aria-label="Navigation">
       <div
         class="w-full mx-auto items-center flex justify-between md:flex-nowrap flex-wrap"
       >

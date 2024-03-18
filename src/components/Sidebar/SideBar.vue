@@ -1,6 +1,6 @@
 <template>
     <nav
-      class="left-0 w-full md:block fixed top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-md bg-white flex flex-wrap items-center justify-between  md:w-64 z-10 py-3"  aria-label="Main Navigation"
+      class="left-0 w-full md:block fixed top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-md bg-white flex flex-wrap items-center justify-between  md:w-64 z-40 py-3"  aria-label="Main Navigation"
     >
       <div
         class="md:flex-col md:items-stretch md:min-h-full md:flex-nowrap flex flex-wrap items-center justify-between w-full mx-auto px-0"

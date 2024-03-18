@@ -38,7 +38,7 @@
        
         <router-link
   to="/dashboard/profile"
-  class="text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-dark font-roboto hover:text-purple"
+  class="py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-gray-dark font-roboto hover:text-purple text-[16px]"
   aria-label="User Profile"
   role="menuitem"
 >

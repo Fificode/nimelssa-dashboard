@@ -18,9 +18,9 @@
         >
           <div class="relative flex w-full flex-wrap items-stretch">
             <span
-              class="z-10 h-full leading-snug font-normal text-center text-gray-dark absolute bg-transparent rounded text-base items-center justify-center w-8 pl-[10px] py-[8px]" aria-hidden="true"
+              class="z-10 bg-transparent h-full leading-snug font-normal text-center text-gray-dark absolute  rounded text-base items-center justify-center w-8 pl-[10px] py-[8px]" aria-hidden="true"
             >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#717171" class="m-[3px] w-[16px] h-[16px] -z-50" aria-label="Search icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#717171" class="m-[3px] w-[16px] h-[16px] " aria-label="Search icon">
   <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
 </svg>
 

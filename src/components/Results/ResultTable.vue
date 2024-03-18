@@ -14,7 +14,7 @@
             </h3>
              <!-- Search -->
         <form
-          class="flex flex-row flex-wrap items-center lg:ml-auto mr-[5px]" aria-label="Search Form"
+          class="flex flex-row flex-wrap items-center lg:ml-auto mr-[5px] mt-[10px] md:mt-0" aria-label="Search Form"
         >
           <div class="relative flex w-full flex-wrap items-stretch">
             <span

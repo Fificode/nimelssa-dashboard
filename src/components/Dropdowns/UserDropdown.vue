@@ -34,7 +34,7 @@
       aria-hidden="true"
       >
       <p class="font-roboto text-[16px] text-gray-dark  py-2 px-4 block w-full whitespace-nowrap bg-transparent text-center font-[600] md:hidden">{{ profile.firstName }} {{ profile.surname }}</p>
-      <div class="h-0 my-2 border border-solid border-gray md:hidden"></div>
+      <div class="h-0 my-2 border-[0.5px] border-solid border-gray md:hidden"></div>
        
         <router-link
   to="/dashboard/profile"

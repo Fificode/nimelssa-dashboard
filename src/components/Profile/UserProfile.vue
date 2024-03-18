@@ -56,6 +56,12 @@
             User Information
           </h6>
           <div class="flex flex-wrap">
+            <div class="relative w-full mb-3  px-4 py-[20px]">
+        <label class="block uppercase text-gray-dark text-xs font-bold font-roboto mb-2" for="image">
+          Profile Image
+        </label>
+        <input type="file" class="border-0 px-3 py-3 placeholder-blueGray-300 text-gray-dark bg-white rounded text-sm shadow focus:outline-light-purple-bg w-full" id="image" accept="image/*" @change="handleImageChange" />
+      </div>
             <div class="w-full lg:w-6/12 px-4 py-[20px]">
               <div class="relative w-full mb-3">
                 <label
@@ -150,7 +156,8 @@
         firstName: "",
         surname: "",
         matricNumber: null,
-        level: null
+        level: null,
+        image: null
       },
       showName: false,
       };
@@ -191,6 +198,15 @@
       localStorage.setItem('profile', JSON.stringify(this.profile));
       // Exit edit mode
       this.toggleEditMode();
+    },
+    handleImageChange(event) {
+      const file = event.target.files[0];
+      // Convert the selected image to a data URL
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.editedProfile.image = reader.result;
+      };
+      reader.readAsDataURL(file);
     }
     }
   }

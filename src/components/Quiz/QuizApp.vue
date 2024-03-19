@@ -3,7 +3,7 @@
       <div class="mt-4 mb-[16px] mx-[5px]">
         <p class="text-[20px] font-roboto text-black font-[600] text-center">Total Time Remaining: {{ displayTime(totalTime) }}</p>
         </div>
-      <div class="rounded-[10px] py-[30px] px-[20px] w-[90%] mx-[20px] md:w-[50%] lg:w-[30%] h-auto bg-white-bg flex flex-col items-center shadow-xl" >
+      <div class="rounded-[10px] py-[30px] px-[20px] w-[90%] mx-[20px] md:w-[50%] h-auto bg-white-bg flex flex-col items-center shadow-xl" >
         <h1 class="text-[23px] font-roboto text-gray-dark font-[600] py-[5px] ">
           Question {{ currentQuestion }}/{{ questions.length }}
         </h1>
@@ -66,7 +66,7 @@ import axios from 'axios';
         props: ["totalPoints", "totalQuestions", "countDownTimerFn"],
     data() {
         return {
-            currentQuestion: 1,
+          currentQuestion: localStorage.getItem('currentQuestion') || 1,
       points: null,
       answersArray: [],
       arr: new Set(),
@@ -78,13 +78,18 @@ import axios from 'axios';
       totalTime: 100,
       questions: [],
       options: [],
-     
+      savedQuizResult: null,
+      selectedOptions: {},
         };
     },
     created() {
+    this.loadCurrentQuestion();
     this.fetchData();
+    this.loadQuizProgress();
+  
   },
   mounted() {
+   
     window.addEventListener('beforeunload', this.confirmLeave);
   },
   beforeUnmount() {
@@ -95,58 +100,105 @@ import axios from 'axios';
 TotalPoints,
   },
     methods: {
-      async fetchData() {
-      try {
-        const response = await axios.get('/static/data.json');
-        this.quiz = response.data.quiz;
-      if (Array.isArray(this.quiz) && this.quiz.length > 0) {
-        this.questions = this.quiz.map(question => {
-        // Create a new object for each question including the question text and image
+    
+      saveQuizProgress() {
+      localStorage.setItem('quizProgress', JSON.stringify({
+        currentQuestion: this.currentQuestion,
+        points: this.points,
+        answersArray: Array.from(this.answersArray),
+        arr: Array.from(this.arr),
+        showResult: this.showResult
+      }));
+    },
+    loadQuizProgress() {
+      const savedProgress = localStorage.getItem('quizProgress');
+      if (savedProgress) {
+        const progress = JSON.parse(savedProgress);
+        this.currentQuestion = progress.currentQuestion;
+        this.points = progress.points;
+        this.answersArray = new Set(progress.answersArray);
+        this.arr = new Set(progress.arr);
+        this.showResult = progress.showResult;
+      }
+    },
+    // Method to save current question to local storage
+    saveCurrentQuestion() {
+      localStorage.setItem('currentQuestion', this.currentQuestion);
+    },
+    // Method to load current question from local storage
+    loadCurrentQuestion() {
+      const savedQuestion = localStorage.getItem('currentQuestion');
+      if (savedQuestion) {
+        this.currentQuestion = parseInt(savedQuestion);
+      } else {
+        this.currentQuestion = 1; // Set default current question if not saved
+      }
+    },
+   
+    async fetchData() {
+  try {
+    const response = await axios.get('/static/data.json');
+    this.quiz = response.data.quiz;
+    if (Array.isArray(this.quiz) && this.quiz.length > 0) {
+      this.questions = this.quiz.map(question => {
+        // Assign an id to each question object
+        const id = question.id;
+        // Create a new object for each question including the question text, image, options, and id
         return {
+          id: id,
           question: question.question,
           image: question.image,
           options: question.options 
         };
       });
-        // Shuffle options for the first question
-        this.shuffleOptions();
+      // Shuffle options for the first question
+      this.shuffleOptions();
     } else {
       console.error('Quiz data is empty or not in the correct format.');
     }
-        //  // Start quiz automatically after data is fetched
-         this.startQuiz = true;
-        this.countDownTimer();
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    },
+
+    // Start quiz automatically after data is fetched
+    this.startQuiz = true;
+    this.countDownTimer();
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+},
+
+
     handleStartQuiz() {
       this.startQuiz = true;
       this.countDownTimer();
     },
+    
     correctAnswer(isCorrect, answer) {
-      if (isCorrect) {
-        this.answersArray.push(answer);
-        this.arr = new Set(this.answersArray);
-        // console.log('Correct answer numbers', this.arr.size);
-      }
-    },
+      const questionId = this.questions[this.currentQuestion - 1].id;
+      this.answersArray.push({ questionId, answer, isCorrect });
 
-    countDownTimer() {
-      if (this.countDown > 0) {
-        this.timer = setTimeout(() => {
-          this.countDown--;
-          this.totalTime--;
-          this.countDownTimer();
-        }, 1000);
-      } else if (this.countDown === 0) {
-        if (this.currentQuestion === this.questions.length) {
-          this.displayResult();
-        } else {
-          this.handleNextQuestion();
-        }
+      // Update the selected option for the current question
+      this.selectedOptions[questionId] = answer;
+
+      if (isCorrect) {
+        this.arr.add(answer);
       }
     },
+  
+  countDownTimer() {
+  if (this.countDown > 0) {
+    this.timer = setTimeout(() => {
+      this.countDown--;
+      this.totalTime--;
+
+    }, 1000);
+  } else if (this.countDown === 0) {
+    if (this.currentQuestion === this.questions.length) {
+      this.displayResult();
+    } else {
+      this.handleNextQuestion();
+    }
+  }
+},
+
 
     handleNextQuestion() {
       clearTimeout(this.timer);
@@ -163,38 +215,113 @@ TotalPoints,
   } else {
     // If there are no more questions, display the result
     this.displayResult();
-  }
-     
-    },
+  }},
     shuffleOptions() {
     // Shuffle options for the current question
     this.options = shuffle(this.quiz[this.currentQuestion - 1].options);
   },
 
+  // Function to calculate the score
+//   calculateScore() {
+//   const totalQuestions = this.questions.length;
+
+//   const correctAnswers = this.arr.size;
+
+//   const percentage = (correctAnswers / totalQuestions) * 100;
+
+//   const roundedPercentage = Math.ceil(percentage);
+
+//   return roundedPercentage;
+// },
+
+calculateScore() {
+  let correctAnswers = 0;
+
+  // Iterate through each question
+  this.questions.forEach(question => {
+    const questionId = question.id;
+    const selectedAnswer = this.selectedOptions[questionId];
+    const correctAnswer = question.options.find(option => option.isCorrect);
+
+    // Check if the selected answer matches the correct answer
+    if (selectedAnswer === correctAnswer.answer) {
+      correctAnswers++;
+    }
+  });
+
+  const totalQuestions = this.questions.length;
+  const percentage = (correctAnswers / totalQuestions) * 100;
+  const roundedPercentage = Math.ceil(percentage);
+
+  return roundedPercentage;
+},
+
+
     displayResult() {
       this.showResult = true;
       this.countDown = 1;
       this.totalTime = 1;
-      this.points = this.arr.size;
-
+      this.points = this.calculateScore();
+      this.saveQuizResult();
     },
+
     displayTime(totalSeconds) {
       const minutes = Math.floor(totalSeconds / 60);
       const seconds = totalSeconds % 60;
       return `${minutes} minute${minutes !== 1 ? 's' : ''} ${seconds} second${seconds !== 1 ? 's' : ''}`;
     },
-    confirmLeave(event) {
-      // Prepare the confirmation message
-      const confirmationMessage = "Are you sure you want to leave? If you leave, your quiz progress will be lost.";
 
-      // Set the event.returnValue (required for some browsers)
-      event.returnValue = confirmationMessage;
-      console.log("confirmation message", confirmationMessage);
-      // Return the confirmation message (not required for all browsers)
-      return confirmationMessage;
-     
-    } 
+    confirmLeave(event) {
+      if (this.showResult) {
+    // Quiz has ended, return null to remove the prompt
+    return null;
+  } else {
+    // Quiz is still ongoing, prepare the confirmation message
+    const confirmationMessage = "Are you sure you want to leave? If you leave, your quiz progress will be lost.";
+    // Set the event.returnValue (required for some browsers)
+    event.returnValue = confirmationMessage;
+    // Return the confirmation message (not required for all browsers)
+    return confirmationMessage;
+  } },
+
+    saveQuizResult() {
+  // Retrieve the existing quiz results array from local storage
+  let quizResults = JSON.parse(localStorage.getItem('quizResults')) || [];
+
+  // Create a new quiz result object
+  const quizResult = {
+    date: new Date(),
+    questionsAnswered: this.questions.map(question => {
+      const selectedAnswer = this.selectedOptions[question.id];
+      console.log("Selected answer", selectedAnswer);
+      const correctAnswer = question.options.find(option => option.isCorrect);
+      console.log("Correct answer", correctAnswer);
+      const isAnswerCorrect = selectedAnswer === correctAnswer.answer;
+
+      return {
+        id: question.id,
+        question: question.question,
+        selectedAnswer: selectedAnswer,
+        correctAnswer: correctAnswer.answer,
+        isAnswerCorrect: isAnswerCorrect
+      };
+    }),
+    score: this.calculateScore() // Calculate score based on current quiz result
+  };
+
+  // Push the new quiz result into the existing array
+  quizResults.push(quizResult);
+
+  // Store the updated array back into local storage
+  localStorage.setItem('quizResults', JSON.stringify(quizResults));
+  console.log("Quiz Results", quizResults);
+},
+
    
+   
+ 
+
+
   },
   
   

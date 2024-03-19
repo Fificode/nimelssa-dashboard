@@ -91,7 +91,7 @@
     methods: {
       async fetchProfileData() {
     try {
-      const response = await axios.get('/static/data,son'); // Example endpoint for fetching profile data
+      const response = await axios.get('/static/data.json'); // Example endpoint for fetching profile data
       this.profile = response.data.profile;
       // Only fetch additional data if profile data is successfully fetched
       this.fetchAdditionalData();

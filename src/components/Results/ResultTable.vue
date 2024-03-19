@@ -125,11 +125,11 @@
       <span class="font-bold" :class="[color === 'light' ? 'text-gray-dark' : 'text-white']">{{ index + 1 }}</span>
     </th>
     <!-- Date -->
-    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto">{{ item.date }}</td>
+    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto">{{ item.date  }}</td>
     <!-- Empty Column -->
     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"></td>
     <!-- Score -->
-    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto">{{ item.score }}</td>
+    <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto">{{ item.score }}%</td>
     <!-- Empty Column -->
     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"></td>
     <!-- View Test -->
@@ -147,12 +147,12 @@
   </template>
   <script>
 
-import axios from 'axios';
+
   
   export default {
     data() {
       return {
-     results: [],
+        savedQuizResult: [],
      displayedResults: [],
      currentPage: 1,
       itemsPerPage: 5,
@@ -162,7 +162,8 @@ import axios from 'axios';
 
     created() {
       
-  this.fetchData();
+
+  this.retrieveSavedQuizResult();
    
   },
     components: {
@@ -178,47 +179,65 @@ import axios from 'axios';
       },
     },
     methods: {
-      async fetchData() {
-      try {
-        const response = await axios.get('/static/data.json');
-        this.results = response.data.results;
+    
+    retrieveSavedQuizResult() {
+      const savedResult = localStorage.getItem('quizResults');
+      if (savedResult) {
+        this.savedQuizResult = JSON.parse(savedResult).map(result => ({
+          ...result,
+          date: this.formatDate(result.date) // Format date here
+        }));
+       
         this.filterResults();
-      } catch (error) {
-        console.error('Error fetching data:', error);
       }
+      else {
+    console.log("No saved result found in local storage"); // Log a message if no data is retrieved
+  }
     },
+   
     seeMoreResults() {
       const nextPageStartIndex = this.currentPage * this.itemsPerPage;
       const nextPageEndIndex = nextPageStartIndex + this.itemsPerPage;
       
-      // Add 5 more results to displayedResults
-      this.displayedResults = this.displayedResults.concat(this.results.slice(nextPageStartIndex, nextPageEndIndex));
+      // No need to slice the savedQuizResult here, just push more items to displayedResults
+      this.displayedResults.push(...this.savedQuizResult.slice(nextPageStartIndex, nextPageEndIndex));
       
       // Increment current page number
       this.currentPage++;
     },
+    
     filterResults() {
       const query = this.searchQuery.toLowerCase();
-      this.displayedResults = this.results.filter(result => {
+      this.displayedResults = this.savedQuizResult.filter(result => {
         return (
           result.date.toLowerCase().includes(query) ||
-          result.score.toLowerCase().includes(query)
+          result.score.toString().toLowerCase().includes(query) // Convert to string before lowercasing
         );
       }).slice(0, this.itemsPerPage);
-     
     },
+
+    formatDate(dateString) {
+      const date = new Date(dateString);
+      return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    },
+
     },
     
     computed: {
       showSeeMoreButton() {
-      return this.currentPage * this.itemsPerPage < this.results.length;
-    },
+      return this.currentPage * this.itemsPerPage < this.savedQuizResult.length;
+    }
+    
   },
+
+ 
+
   watch: {
     searchQuery() {
       this.filterResults();
       this.currentPage = 1; // Reset current page when search query changes
-    },
+    }
+   
   },
   };
   </script>

@@ -221,18 +221,6 @@ TotalPoints,
     this.options = shuffle(this.quiz[this.currentQuestion - 1].options);
   },
 
-  // Function to calculate the score
-//   calculateScore() {
-//   const totalQuestions = this.questions.length;
-
-//   const correctAnswers = this.arr.size;
-
-//   const percentage = (correctAnswers / totalQuestions) * 100;
-
-//   const roundedPercentage = Math.ceil(percentage);
-
-//   return roundedPercentage;
-// },
 
 calculateScore() {
   let correctAnswers = 0;
@@ -293,9 +281,9 @@ calculateScore() {
     date: new Date(),
     questionsAnswered: this.questions.map(question => {
       const selectedAnswer = this.selectedOptions[question.id];
-      console.log("Selected answer", selectedAnswer);
+      // console.log("Selected answer", selectedAnswer);
       const correctAnswer = question.options.find(option => option.isCorrect);
-      console.log("Correct answer", correctAnswer);
+      // console.log("Correct answer", correctAnswer);
       const isAnswerCorrect = selectedAnswer === correctAnswer.answer;
 
       return {
@@ -308,7 +296,8 @@ calculateScore() {
     }),
     score: this.calculateScore() // Calculate score based on current quiz result
   };
-
+  quizResult.totalAttemptedQuestions = quizResult.questionsAnswered.length;
+  quizResult.totalCorrectAnswers = quizResult.questionsAnswered.filter(question => question.isAnswerCorrect).length;
   // Push the new quiz result into the existing array
   quizResults.push(quizResult);
 

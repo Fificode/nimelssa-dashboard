@@ -1,4 +1,5 @@
 <template>
+  <div v-show="!showResultCard">
     <div
       class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded "
       :class="[color === 'light' ? 'bg-white' : 'bg-purple text-white']"  aria-label="Quiz Results"
@@ -134,7 +135,7 @@
     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto"></td>
     <!-- View Test -->
     <td class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-[14px] whitespace-nowrap p-4 font-roboto font-[600]">
-      <a href="#" class="text-purple">view </a>
+      <button class="text-purple" @click="toggleResultCard(index)">view </button>
     </td>
   </tr>
           </tbody>
@@ -144,11 +145,35 @@
         </div> 
       </div>
     </div>
+  </div>
+
+    <div v-if="showResultCard" >
+      <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0"  aria-label="Result Card">
+      <div class="rounded-t bg-white mb-0 px-6 py-6">
+        <div class="text-left">
+          <h6 class="text-gray-dark text-xl font-bold font-roboto">Quiz Result</h6>
+        </div>
+      </div>
+      <div class="flex-auto px-8 lg:px-10 py-10 pt-0">
+       <h6 class="text-gray-dark font-roboto text-sm mt-3 mb-6 font-bold uppercase">
+           You attempted...
+          </h6>
+         <p v-if="displayedResults[activeIndex]?.question">Question: {{ displayedResults[activeIndex].question }}</p>
+      <p v-if="displayedResults[activeIndex]?.pickedAnswer">Answer Picked: {{ displayedResults[activeIndex].pickedAnswer }}</p>
+      <p v-if="displayedResults[activeIndex]?.correctAnswer">Correct Answer: {{ displayedResults[activeIndex].correctAnswer }}</p>
+      <!-- Other details as needed -->
+      <p>Total Attempted Questions: {{ displayedResults[activeIndex].totalAttemptedQuestions }}</p>
+      <p>Total Correct Answers: {{ displayedResults[activeIndex].totalCorrectAnswers }}</p>
+      </div>
+      <button class="text-purple font-roboto font-semibold text-lg mt-6" @click="hideResultCard">Cancel</button>
+    </div>
+    
+    </div>
   </template>
   <script>
 
 
-  
+
   export default {
     data() {
       return {
@@ -156,7 +181,10 @@
      displayedResults: [],
      currentPage: 1,
       itemsPerPage: 5,
-      searchQuery: ''
+      searchQuery: '',
+      showResultCard: false,
+      selectedResult: null,
+      activeIndex : -1,
       };
     },
 
@@ -164,6 +192,7 @@
       
 
   this.retrieveSavedQuizResult();
+
    
   },
     components: {
@@ -179,7 +208,34 @@
       },
     },
     methods: {
+      toggleResultCard(index) {
+    // Ensure that index is within the bounds of displayedResults array
+    if (index >= 0 && index < this.displayedResults.length) {
+      // Access the quiz result corresponding to the clicked index
+      this.selectedResult = this.displayedResults[index];
+      this.activeIndex = index;
+      // Show the result card
+      this.showResultCard = true;
+      // console.log("Clicked Index:", index);
+      console.log(this.displayedResults[this.activeIndex])
+
+    } else {
+      console.error("Invalid index:", index);
+    }
+  },
+    //   toggleResultCard(index) {
+    //   // Show the result card and set the selected result
+    //   this.showResultCard = true;
+    //   this.selectedResult = this.displayedResults[index];
+    // },
     
+      
+    hideResultCard() {
+      // Hide the result card and reset selectedResult and activeIndex
+      this.showResultCard = false;
+      this.selectedResult = null;
+      this.activeIndex = -1;
+    },
     retrieveSavedQuizResult() {
       const savedResult = localStorage.getItem('quizResults');
       if (savedResult) {
@@ -187,8 +243,9 @@
           ...result,
           date: this.formatDate(result.date) // Format date here
         }));
-       
+        this.savedQuizResult.sort((a, b) => b.date - a.date);
         this.filterResults();
+        // console.log("Saved Quiz Results:", this.savedQuizResult);
       }
       else {
     console.log("No saved result found in local storage"); // Log a message if no data is retrieved

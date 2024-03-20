@@ -3,7 +3,7 @@
       <div class="mt-4 mb-[16px] mx-[5px]">
         <p class="text-[20px] font-roboto text-black font-[600] text-center">Total Time Remaining: {{ displayTime(totalTime) }}</p>
         </div>
-      <div class="rounded-[10px] py-[30px] px-[20px] w-[90%] mx-[20px] sm:w-[60%] md:w-[40%]  h-auto bg-white-bg flex flex-col items-center shadow-xl" >
+      <div class="rounded-[10px] py-[30px] px-[20px] w-[90%] mx-[20px] sm:w-[60%] md:w-[40%] lg:w-[35%] h-auto bg-white-bg flex flex-col items-center shadow-xl" >
         <h1 class="text-[23px] font-roboto text-gray-dark font-[600] py-[5px] ">
           Question {{ currentQuestion }}/{{ questions.length }}
         </h1>

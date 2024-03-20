@@ -138,6 +138,9 @@
       <button class="text-purple" @click="toggleResultCard(index)">view </button>
     </td>
   </tr>
+  <div v-if="displayedResults.length === 0" class="flex" >
+   <p class="text-center text-gray-dark font-roboto font-[500] text-[16px] mt-4 mx-[10px]"> No results found</p>
+  </div>
           </tbody>
         </table>
         <div class="p-[20px]">
@@ -146,7 +149,7 @@
       </div>
     </div>
   </div>
-
+ 
     <div v-if="showResultCard" >
       <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0"  aria-label="Result Card">
       <div class="rounded-t bg-white mb-0 px-6 py-6">

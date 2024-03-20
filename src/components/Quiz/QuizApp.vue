@@ -1,5 +1,11 @@
 <template>
     <div class="flex flex-col justify-center items-center bg-[#bbb] min-h-[100vh] py-[30px]" v-if="!showResult">
+      <button @click="handleBackNavigation()" class="p-[10px] border-[2px] border-[#000] rounded-[50%]">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+</svg>
+
+      </button>
       <div class="mt-4 mb-[16px] mx-[5px]">
         <p class="text-[20px] font-roboto text-black font-[600] text-center">Total Time Remaining: {{ displayTime(totalTime) }}</p>
         </div>
@@ -17,7 +23,7 @@
         </p>
         <div v-if="questions[currentQuestion - 1]?.image" class="flex justify-center items-center">
   <!-- Display the image using an img tag -->
-  <img :src="questions[currentQuestion - 1]?.image" alt="Question Image" class="max-w-[300px] mx-2 my-4">
+  <img :src="questions[currentQuestion - 1]?.image" alt="Question Image" class="max-w-[300px] h-[200px] mx-2 my-4">
 </div>
         <div class="mt-4 flex flex-col">
           <button
@@ -91,16 +97,42 @@ import axios from 'axios';
   mounted() {
    
     window.addEventListener('beforeunload', this.confirmLeave);
+    window.addEventListener('popstate', this.handlePopstate);
   },
   beforeUnmount() {
     window.removeEventListener('beforeunload', this.confirmLeave);
+    window.removeEventListener('popstate', this.handlePopstate);
   },
   
   components: {
 TotalPoints,
   },
     methods: {
-    
+      handleBackNavigation() {
+      if (this.showResult) {
+        this.navigateToPreviousPage();
+      } else {
+        const confirmation = window.confirm("Are you sure you want to go back? Your quiz progress will be lost.");
+        if (confirmation) {
+          this.navigateToPreviousPage();
+        } else {
+          return;
+        }
+      }
+    },
+
+    navigateToPreviousPage() {
+      window.history.back();
+    },
+    handlePopstate(event) {
+      if (!this.showResult) {
+        const confirmation = window.confirm("Are you sure you want to leave? If you leave, your quiz progress will be lost.");
+        if (!confirmation) {
+          history.pushState(null, null, window.location.href);
+          event.preventDefault();
+        }
+      }
+    },
       saveQuizProgress() {
       localStorage.setItem('quizProgress', JSON.stringify({
         currentQuestion: this.currentQuestion,
@@ -183,7 +215,7 @@ TotalPoints,
     this.timer = setTimeout(() => {
       this.countDown--;
       this.totalTime--;
-
+      this.countDownTimer(); 
     }, 1000);
   } else if (this.countDown === 0) {
     if (this.currentQuestion === this.questions.length) {
@@ -245,13 +277,12 @@ calculateScore() {
     },
 
     confirmLeave(event) {
-      if (this.showResult) {
-    return null;
-  } else {
-    const confirmationMessage = "Are you sure you want to leave? If you leave, your quiz progress will be lost.";
-    event.returnValue = confirmationMessage;
-    return confirmationMessage;
-  } },
+      if (!this.showResult) {
+        const confirmationMessage = "Are you sure you want to leave? If you leave, your quiz progress will be lost.";
+        event.returnValue = confirmationMessage;
+        return confirmationMessage;
+      }
+    },
 
     saveQuizResult() {
   let quizResults = JSON.parse(localStorage.getItem('quizResults')) || [];

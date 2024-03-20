@@ -150,22 +150,26 @@
     <div v-if="showResultCard" >
       <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white border-0"  aria-label="Result Card">
       <div class="rounded-t bg-white mb-0 px-6 py-6">
-        <div class="text-left">
-          <h6 class="text-gray-dark text-xl font-bold font-roboto">Quiz Result</h6>
+        <div class="flex flex-row justify-between ">
+          <h6 class="text-gray-dark text-xl font-bold font-roboto pl-[7px]" v-if="displayedResults[activeIndex]?.date">{{ displayedResults[activeIndex].date }}</h6>
+          <button class="" @click="hideResultCard">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="w-[25px] h-[25px] fill-purple"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
+      </button>
         </div>
       </div>
       <div class="flex-auto px-8 lg:px-10 py-10 pt-0">
-       <h6 class="text-gray-dark font-roboto text-sm mt-3 mb-6 font-bold uppercase">
-           You attempted...
+       <h6 class="text-gray-dark font-roboto text-[16px] mt-3 mb-6 font-bold uppercase">
+           You attempted {{ displayedResults[activeIndex].totalAttemptedQuestions }} questions and from that {{ displayedResults[activeIndex].totalCorrectAnswers }} was correct
           </h6>
-         <p v-if="displayedResults[activeIndex]?.question">Question: {{ displayedResults[activeIndex].question }}</p>
-      <p v-if="displayedResults[activeIndex]?.pickedAnswer">Answer Picked: {{ displayedResults[activeIndex].pickedAnswer }}</p>
-      <p v-if="displayedResults[activeIndex]?.correctAnswer">Correct Answer: {{ displayedResults[activeIndex].correctAnswer }}</p>
-      <!-- Other details as needed -->
-      <p>Total Attempted Questions: {{ displayedResults[activeIndex].totalAttemptedQuestions }}</p>
-      <p>Total Correct Answers: {{ displayedResults[activeIndex].totalCorrectAnswers }}</p>
+          <div v-if="displayedResults[activeIndex]?.questionsAnswered" >
+        <div v-for="(question, questionIndex) in displayedResults[activeIndex].questionsAnswered" :key="questionIndex" class="py-[10px]">
+          <p class="text-gray-dark text-[18px] font-[400] font-roboto"> <span class="font-[800]">Question {{ question.id }}:</span> {{ question.question }} </p>
+          <p class="text-[#000] text-[16px] font-[400] font-roboto" v-if="question.selectedAnswer"><span class="font-[700]">Answer Selected: </span>{{ question.selectedAnswer }}</p>
+          <p class="text-[#000] text-[16px] font-[400] font-roboto"><span class="font-[700]">Correct Answer:</span> {{ question.correctAnswer }}</p>
+        </div>
       </div>
-      <button class="text-purple font-roboto font-semibold text-lg mt-6" @click="hideResultCard">Cancel</button>
+      </div>
+      
     </div>
     
     </div>
@@ -209,25 +213,17 @@
     },
     methods: {
       toggleResultCard(index) {
-    // Ensure that index is within the bounds of displayedResults array
     if (index >= 0 && index < this.displayedResults.length) {
-      // Access the quiz result corresponding to the clicked index
       this.selectedResult = this.displayedResults[index];
       this.activeIndex = index;
-      // Show the result card
       this.showResultCard = true;
-      // console.log("Clicked Index:", index);
-      console.log(this.displayedResults[this.activeIndex])
+    
 
     } else {
       console.error("Invalid index:", index);
     }
   },
-    //   toggleResultCard(index) {
-    //   // Show the result card and set the selected result
-    //   this.showResultCard = true;
-    //   this.selectedResult = this.displayedResults[index];
-    // },
+  
     
       
     hideResultCard() {
@@ -241,9 +237,13 @@
       if (savedResult) {
         this.savedQuizResult = JSON.parse(savedResult).map(result => ({
           ...result,
-          date: this.formatDate(result.date) // Format date here
+          date: this.formatDate(result.date), // Format date here
+          questionsAnswered: result.questionsAnswered.map(question => ({
+        ...question,
+        selectedAnswer: question.selectedAnswer || "No answer selected" // Set default value for selectedAnswer
+      }))
         }));
-        this.savedQuizResult.sort((a, b) => b.date - a.date);
+        this.savedQuizResult.sort((a, b) => new Date(b.date) - new Date(a.date));
         this.filterResults();
         // console.log("Saved Quiz Results:", this.savedQuizResult);
       }
@@ -255,8 +255,6 @@
     seeMoreResults() {
       const nextPageStartIndex = this.currentPage * this.itemsPerPage;
       const nextPageEndIndex = nextPageStartIndex + this.itemsPerPage;
-      
-      // No need to slice the savedQuizResult here, just push more items to displayedResults
       this.displayedResults.push(...this.savedQuizResult.slice(nextPageStartIndex, nextPageEndIndex));
       
       // Increment current page number

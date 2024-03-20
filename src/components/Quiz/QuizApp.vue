@@ -86,6 +86,7 @@ import axios from 'axios';
       options: [],
       savedQuizResult: null,
       selectedOptions: {},
+      quizResultSaved: false
         };
     },
     created() {
@@ -267,7 +268,11 @@ calculateScore() {
       this.countDown = 1;
       this.totalTime = 1;
       this.points = this.calculateScore();
-      this.saveQuizResult();
+  
+      if (!this.quizResultSaved) { 
+    this.saveQuizResult();
+    this.quizResultSaved = true; 
+  }
     },
 
     displayTime(totalSeconds) {
@@ -310,7 +315,7 @@ calculateScore() {
 
 
   localStorage.setItem('quizResults', JSON.stringify(quizResults));
-  console.log("Quiz Results", quizResults);
+  // console.log("Quiz Results", quizResults);
 },
  },
   

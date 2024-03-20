@@ -138,9 +138,16 @@
       <button class="text-purple" @click="toggleResultCard(index)">view </button>
     </td>
   </tr>
-  <div v-if="displayedResults.length === 0" class="flex" >
-   <p class="text-center text-gray-dark font-roboto font-[500] text-[16px] mt-4 mx-[10px]"> No results found</p>
-  </div>
+  <tr v-if="displayedResults.length === 0" class="flex" >
+    <td class="px-6 align-middle  text-[14px] whitespace-nowrap  font-roboto"></td>
+    <td class=" px-6 align-middle  text-[14px] whitespace-nowrap  font-roboto"></td>
+    <td class=" px-6 align-middle  text-[14px] whitespace-nowrap  font-roboto"></td>
+   <td class=" px-6 align-middle text-[14px] whitespace-nowrap  font-roboto"></td>
+   <td class=" px-6 align-middle text-[14px] whitespace-nowrap  font-roboto"></td>
+   <td class=" px-6 align-middle  text-[14px] whitespace-nowrap  font-roboto"></td>
+   <td class=" px-6 align-middle  text-[14px] whitespace-nowrap  font-roboto"></td>
+   <td class="text-center text-gray-dark font-roboto font-[500] text-[16px]  px-6 align-middle mt-[20px]"> No results found</td>
+  </tr>
           </tbody>
         </table>
         <div class="p-[20px]">

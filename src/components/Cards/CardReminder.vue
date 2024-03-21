@@ -18,7 +18,7 @@
             Friday
            </h2>
            <p class="text-[19px] font-[500] leading-normal text-text-black pt-[20px] mb-2 font-roboto">
-            17th March, 2024
+            29th March, 2024
            </p>
           </div>
           

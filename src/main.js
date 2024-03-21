@@ -10,7 +10,7 @@ import LeaderBoard from '@/views/LeaderBoardPage.vue'
 import UserProfile from '@/views/UserProfilePage.vue'
 import ExternalQuiz from '@/views/ExternalQuizPage.vue'
 import CountdownQuiz from '@/components/Quiz/CountdownQuiz.vue'
-
+import store from './store';
 
 
 const routes = [
@@ -64,6 +64,7 @@ const routes = [
  
   const app = createApp(App)
 
+app.use(store);
 app.use(router)
 app.mount('#app');
 
